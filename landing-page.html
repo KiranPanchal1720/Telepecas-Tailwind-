@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telepicas</title>
+  <meta name="title" content="Tailwind CSS  Horizontal Navigation - Free &amp; Premium components">
+  <meta name="description" content="Tailwind Navigation components act as the primary navigation of a webapp.">
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- slider -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <style>
+    .fixed-icon {
+      width: 45px;
+    }
+
+    .hide-text {
+      display: none;
+    }
+
+    .tab.active {
+      background: #7EAF00;
+      padding: 5px 15px 3px;
+    }
+
+    .down-arrow {
+      display: block;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .down-arrow {
+        display: none;
+      }
+
+      .fixed-icon i {
+        font-size: 16px !important;
+      }
+
+    }
+  </style>
+
+</head>
+
+<body class="bg-[#F6F6F6]">
+  <!-- partial:index.partial.html -->
+  <div class="h-full w-full">
+    <!-- Code block starts -->
+
+    <!-- This is an example component -->
+    <div class="w-full mx-auto">
+      <nav class="bg-white">
+        <div
+          class="w-full max-w-[1540px] lg:p-3 md:p-3 p-2  flex  mx-auto flex-wrap md:flex-nowrap lg:flex-nowrap items-center justify-between py-3 mb-3 lg:mb-0">
+
+          <a href="#" class="flex">
+            <img class="w-full lg:max-w-[200px] md:max-w-[100px] max-w-[100px]" src="images/logo.png" />
+          </a>
+          <button data-collapse-toggle="mobile-menu" type="button"
+            class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none rounded-lg inline-flex items-center justify-center"
+            aria-controls="mobile-menu-2" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:block md:block hidden lg:w-[600px] md:w-[200px] mx-3">
+            <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+              <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </span>
+              <input name="episodequery" id="title"
+                class="border-white outline-none border-0  lg:max-w-full w-full rounded-xl p-2" type="text"
+                placeholder="Search Product Here" style="background:#F2F2F2;">
+              <button type="submit" class="lg:p-3 md:p-2 p-3 text-white text-[100px] rounded-tr rounded-br"
+                style="background:#7EAF00;">
+                <p class="">Search</p>
+            </div>
+          </form>
+          <div
+            class="hidden md:block w-full md:w-auto md:relative lg:relative absolute lg:top-0 md:top-0  top-[56px] left-0 lg:p-0 p-5 bg-white"
+            id="mobile-menu">
+            <ul class="flex lg:justify-between md:justify-between justify-start  lg:mt-0 md:mt-0 mt-5 items-cente  ">
+              <li>
+                <a class="cursor-pointer">
+                  <div class="text-gray-800">
+                    <div class="flex items-center pr-2">
+                      <i class="text-lg fa fa-shopping-cart lg:p-3 p-2 border rounded-full border-black"
+                        aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a class="cursor-pointer">
+                  <div class="text-gray-800">
+                    <div class="flex items-center pr-2">
+                      <i class="text-lg fa fa-bookmark lg:p-3 p-2 lg:pl-4 lg:pr-4 pl-3 pr-3 border rounded-full border-black"
+                        aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+
+              <li class="text-gray-800 cursor-pointer">
+                <div class="flex items-center  pr-2">
+                  <img src="images/map.png" class="lg:max-w-[40px] max-w-[30px] lg:h-[40px] h-[30px]">
+                </div>
+              </li>
+              <li class="text-gray-800 cursor-pointer">
+                <div class="flex items-center  pr-2">
+                  <i class="text-lg fa fa-eur lg:p-3 p-2 lg:pl-4 lg:pr-4 pl-3 pr-3 border rounded-full border-black"
+                    aria-hidden="true"></i>
+                </div>
+              </li>
+            </ul>
+            <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:hidden md:hidden block  lg:mt-0 md:mt-0 mt-5 "
+              style="background:#F2F2F2;">
+              <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+                <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </span>
+                <input name="episodequery" id="title" class="border-white outline-none border-0 w-full rounded-xl p-2"
+                  type="text" placeholder="Search Product Here" style="background:#F2F2F2;">
+                <button type="submit" class=" p-3 text-white text-xl rounded-tr rounded-br bg-[#7EAF00]">
+                  <p class="font-semibold text-lg">Search</p>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div
+            class="flex lg:w-full md:max-w-[185px] lg:max-w-[250px] justify-between right-10 lg:right-auto md:right-auto absolute lg:relative md:relative lg:top-0 md:top-0 top-3 rounded-md ">
+            <div class=" lg:w-full md:max-w-[160px] lg:max-w-[200px]">
+              <div x-data="select" class="relative" @click.outside="open = false">
+                <button @click="toggle" :class="(open) &amp;&amp; 'ring-blue-600'"
+                  class="flex w-full border-2 text-white outline-none rounded-md border-none bg-[#000]  py-3 px-2">
+                  <span class="text-[#7EAF00] font-semibold font-[Poppins]"><i class="fa fa-user mr-2"
+                      aria-hidden="true"></i> Nick smith</span>
+                  <i
+                    class="fa fa-caret-down absolute right-4 bg-[#7EAF00] text-black rounded-full w-[20px] h-[19px] text-[10px] down-arrow"></i>
+                </button>
+                <ul class="z-2 absolute lg:mt-5 mt-1 w-full rounded bg-black text-white" x-show="open"
+                  style="display: none;">
+                  <li class="cursor-pointer select-none p-2 hover:bg-gray-800" @click="setLanguage('Python')">Python
+                  </li>
+                  <li class="cursor-pointer select-none p-2 hover:bg-gray-800" @click="setLanguage('PHP')">PHP</li>
+                  <li class="cursor-pointer select-none p-2 hover:bg-gray-800" @click="setLanguage('C#')">C#</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-black lg:p-3 p-1 rounded-lg flex ml-3">
+              <p class="text-[#7EAF00] font-semibold font-[Poppins] flex justify-center align-center items-center">5</p>
+              <i class="fa fa-star text-[#7EAF00] ml-3 items-center align-center" aria-hidden="true"
+                style="display: flex;"></i>
+            </div>
+
+          </div>
+          <!-- Dropdown menu -->
+          <div id="dropdownNavbar"
+            class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+            <ul class="py-1" aria-labelledby="dropdownLargeButton">
+              <li>
+                <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sell Parts</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Professional</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Private</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class=" bg-black p-5 mb-3">
+      <div class="w-full max-w-[1540px] mx-auto">
+        <div class="flex flex-wrap justify-between align-center justify-center">
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Inbox Requests</a></div>
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Request Parts</a></div>
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Find Parts</a></div>
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Auto-data (0 credits)</a></div>
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Advertising (0 ADS)</a></div>
+          <div class="w-full lg:w-2/12 text-center"><a href="##" class="text-white font-[Saira] font-semibold">Make An
+              Advertisement</a></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div x-data="{ sidebarOpen: window.innerWidth > 768 }" class="flex h-full">
+      <aside
+        class="pt-5 flex-shrink-0 w-70 flex flex-col border-r relative transition-all duration-300 bg-black rounded-r-lg after:z-0 after:border after:border-[#ffffff7a] after:absolute lg:after:left-[60px]  after:top-0 after:w-[1px] after:h-[100%] after:shadow"
+        :class="{ 'fixed-icon': !sidebarOpen }">
+
+        <div x-data="{ expanded: null }" x-cloak class=" ">
+          <!-- Main Toggle 1 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a1" class="flex align-center tab active px-3" style="background: #7EAF00;">
+              <i class="fa fa-home mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Home</div>
+            </div>
+          </div>
+          <!-- Main Toggle 2 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a2" class="flex align-center tab px-3">
+              <i class="fa fa-inbox mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Inbox</div>
+            </div>
+          </div>
+          <!-- Main Toggle 3 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a3" class="flex align-center tab px-3">
+              <i class="fa fa-file-text mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Submit Part Request</div>
+            </div>
+          </div>
+          <!-- Main Toggle 4 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a4" class="flex align-center tab px-3">
+              <i class="fa fa-line-chart mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-4 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Manage Stock</div>
+            </div>
+          </div>
+
+          <!-- Main Toggle 4 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a5" class="flex align-center tab px-3">
+              <i class="fa fa-search mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Online Store New</div>
+            </div>
+          </div>
+          <!-- Main Toggle 5 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a6" class="flex align-center tab px-3">
+              <i class="fa fa-server mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Technical Data</div>
+            </div>
+          </div>
+          <!-- Main Toggle 6 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a7" class="flex align-center tab px-3">
+              <i class="fa fa-television mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira] "
+                :class="{ 'hide-text': !sidebarOpen }">Statistics News</div>
+            </div>
+          </div>
+          <!-- Main Toggle 7 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a8" class="flex align-center tab px-3">
+              <i class="fa fa-shopping-bag mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true"
+                style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">My Shopping</div>
+            </div>
+          </div>
+
+          <!-- Main Toggle 8 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a9" class="flex align-center tab px-3">
+              <i class="fa fa-th-large mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">My Reservations</div>
+            </div>
+          </div>
+
+          <!-- Main Toggle 9 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a10" class="flex align-center tab px-3">
+              <i class="fa fa-heart mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira] "
+                :class="{ 'hide-text': !sidebarOpen }">Favourite List</div>
+            </div>
+          </div>
+          <!-- Main Toggle 10 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a11" class="flex align-center tab px-3">
+              <i class="fa fa-truck mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Shipping Settings</div>
+            </div>
+          </div>
+          <!-- Main Toggle 11 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a12" class="flex align-center tab px-3">
+              <i class="fa fa-codepen mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Cmotor TecDoc Free</div>
+            </div>
+          </div>
+          <!-- Main Toggle 12 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a13" class="flex align-center tab px-3">
+              <i class="fa fa-user mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-8 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">My Persona Data</div>
+            </div>
+          </div>
+
+          <!-- Main Toggle 13 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a14" class="flex align-center tab px-3">
+              <i class="fa fa-calendar-check-o mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true"
+                style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Checking Account</div>
+            </div>
+          </div>
+          <!-- Main Toggle 14 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a15" class="flex align-center tab px-3">
+              <i class="fa fa-cog mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-7 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Website Management</div>
+            </div>
+          </div>
+          <!-- Main Toggle 15 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a16" class="flex align-center tab px-3">
+              <i class="fa fa-skyatlas mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Protocols</div>
+            </div>
+          </div>
+          <!-- Main Toggle 16 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a17" class="flex align-center tab px-3">
+              <i class="fa fa-sign-out mr-5 mt-1" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer">Log Out</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="flex-1 lg:ml-5 ml-0 p-4 lg:p-0">
+        <button class="p-1 mt-2 bg-black pl-3 pr-3 pt-2 pb-2 rounded-lg ml-4" @click="sidebarOpen = !sidebarOpen">
+          <i class="fa fa-bars text-white" aria-hidden="true"></i>
+        </button>
+        <main class="">
+          <div class="flex-grow mt-3 text-sm">
+            <!-- hometab -->
+            <div class="tabContent flex flex-col gap-y-4 " id="a1">
+              <div class="bg-black flex flex-wrap justify-between p-2 rounded-lg pl-5 pr-5 items-center">
+                <div class="w-full lg:w-3/12 ">
+                  <p class="font-[Saira] font-semibold text-white flex flex-wrap items-center text-[16px]">
+                    <span class="text-[#7EAF00]">Account</span> - Ultra <span class="text-[#7EAF00]">Active</span>
+                    Advertiser
+                  </p>
+                </div>
+                <div
+                  class="bg-[#4D4D4D] p-2 pl-5 pr-5 flex rounded-lg items-center w-full lg:w-3/12  justify-between my-3 lg:my-3">
+                  <span class="font-[Saira] font-semibold text-white mr-3">06-12-2026</span>
+                  <div class="bg-white font-[Saira] font-semibold  rounded-lg p-2">Expiration Date</div>
+                </div>
+                <div
+                  class="bg-white text-[#7EAF00] pl-4 pr-4 cursor-pointer text-center font-[Saira] font-semibold flex items-center  text-[16px] w-full lg:w-3/12 justify-center pt-2 pb-2">
+                  Check The Available Plans</div>
+              </div>
+
+              <div class="bg-black p-2 rounded-lg pl-5 pr-5  pt-5 pb-5">
+                <p
+                  class="font-[Saira] font-semibold text-white flex items-center text-[16px] border-b block w-full border-[#7EAF00] pb-3">
+                  Key Account Manger</p>
+                <div class="pt-3 font-[Saira] font-semibold text-white flex flex-wrap items-center text-[16px]">
+                  <div class="text-[#7EAF00]">Fabio Pinto</div>
+                  <div> - +351 965048232
+                    <span class="text-[11px] font-normal"> (call to the Portuguese national mobile network) or </span>
+                  </div>
+                  <div>
+                    Contact By Email
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-black p-2 rounded-lg pl-5 pr-5 pt-5 pb-5">
+                <p
+                  class="font-[Saira] font-semibold text-white flex items-center text-[16px] border-b block w-full border-[#7EAF00] pb-3">
+                  Warning</p>
+                <span class="pt-3 font-[Saira] font-normal text-white flex items-center text-[16px] mb-4">
+                  It is with great excitement that we announce the launch of an innovative artificial intelligence tool,
+                  custom-developed for the used auto parts sector. This innovative technology was created to transform
+                  the way workshops and sellers with stock published in the online store interact with the market,
+                  making processes more agile, efficient and accessible.
+                </span>
+                <span class="pt-3 font-[Saira] font-normal text-white flex items-center text-[16px] mb-2">
+                  With this tool, it is now possible :
+                </span>
+
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Identify parts with greater precision and speed
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Order parts more simply and quickly
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Get crossover and OEM / IAM reference data.
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Recognition of parts through photos.
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Optimize searches, saving time and effort;
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Facilitate negotiations between buyers and suppliers in an intelligent way.
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Search ads based on search or location criteria.
+                  </span>
+                </div>
+                <ul class="mt-5">
+                  <li class="font-[Saira] font-normal text-white flex items-center text-[16px] mb-2">• You can access
+                    the tool from any page on the portal (chat button at the bottom right).</li>
+                  <li class="font-[Saira] font-normal text-white flex items-center text-[16px]  mb-2">• We reaffirm our
+                    commitment to innovation and technological development in the sector.</li>
+                  <li class="font-[Saira] font-normal text-white flex items-center text-[16px]  mb-2">• We are grateful
+                    for the trust of everyone who has accompanied us on this long journey. Together, we build the future
+                    of the used auto parts sector!</li>
+                </ul>
+                <img class="w-full max-w-[110px] mt-4" src="images/logo.png">
+                <span class=" font-[Saira] font-normal text-white flex items-center text-[16px] mt-3">
+                  Best Regards,
+                </span>
+                <span class=" font-[Saira] font-normal text-white flex items-center text-[16px] mt-3  mb-5">
+                  Telepecas.com Team
+                </span>
+              </div>
+            </div>
+            <!-- secountab -->
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a2">
+              <div class="bg-black flex flex-wrap justify-between p-2 rounded-lg pl-5 pr-5 items-center mb-2">
+                <div class="w-full lg:w-3/12 ">
+                  <p
+                    class="font-[Saira] font-semibold text-white flex items-center text-[16px] whitespace-break-spaces">
+                    <span class="text-[#7EAF00]">Account</span> - Ultra <span class="text-[#7EAF00]">Active</span>
+                    Advertiser</p>
+                </div>
+                <div
+                  class="bg-[#4D4D4D] p-2 pl-5 pr-5 flex rounded-lg items-center w-full lg:w-3/12  justify-between my-3 lg:my-3">
+                  <span class="font-[Saira] font-semibold text-white mr-3">06-12-2026</span>
+                  <div class="bg-white font-[Saira] font-semibold  rounded-lg p-2">Expiration Date</div>
+                </div>
+                <div
+                  class="bg-white text-[#7EAF00] pl-4 pr-4 cursor-pointer text-center font-[Saira] font-semibold flex items-center  text-[16px] w-full lg:w-3/12 justify-center pt-2 pb-2">
+                  Check The Available Plans</div>
+              </div>
+
+              <div class="bg-black p-2 rounded-lg pl-5 pr-5  pt-5 pb-5 mb-2">
+                <p
+                  class="font-[Saira] font-semibold text-white flex items-center text-[16px] border-b block w-full border-[#7EAF00] pb-3">
+                  Key Account Manger</p>
+                <span
+                  class="pt-3 font-[Saira] font-semibold text-white flex items-center text-[16px] whitespace-break-spaces">
+                  <span class="text-[#7EAF00]">Fabio Pinto</span> - +351 965048232 <span
+                    class="text-[11px] font-normal"> (call to the Portuguese national mobile network) or </span> Contact
+                  By Email</span>
+              </div>
+
+              <div class="bg-black p-2 rounded-lg pl-5 pr-5 pt-5 pb-5">
+                <p
+                  class="font-[Saira] font-semibold text-white flex items-center text-[16px] border-b block w-full border-[#7EAF00] pb-3">
+                  Warning</p>
+                <span class="pt-3 font-[Saira] font-normal text-white flex items-center text-[16px] mb-4">
+                  It is with great excitement that we announce the launch of an innovative artificial intelligence tool,
+                  custom-developed for the used auto parts sector. This innovative technology was created to transform
+                  the way workshops and sellers with stock published in the online store interact with the market,
+                  making processes more agile, efficient and accessible.
+                </span>
+                <span class="pt-3 font-[Saira] font-normal text-white flex items-center text-[16px] mb-2">
+                  With this tool, it is now possible :
+                </span>
+
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Identify parts with greater precision and speed
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Order parts more simply and quickly
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Get crossover and OEM / IAM reference data.
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Recognition of parts through photos.
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Optimize searches, saving time and effort;
+                  </span>
+                </div>
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Facilitate negotiations between buyers and suppliers in an intelligent way.
+                  </span>
+                </div>
+
+                <div class="flex align-center items-center mt-3">
+                  <i class="fa fa-check-circle text-[#7EAF00] mr-3" aria-hidden="true" style="font-size: 25px;"></i>
+                  <span class=" font-[Saira] font-normal text-white flex items-center text-[16px]">
+                    Search ads based on search or location criteria.
+                  </span>
+                </div>
+
+                <ul class="mt-5">
+                  <li class="font-[Saira] font-normal text-white flex items-center text-[16px] mb-2">• You can access
+                    the tool from any page on the portal (chat button at the bottom right).</li>
+                  <li class="font-[Saira] font-normal text-white flex items-center text-[16px]  mb-2">• We reaffirm our
+                    commitment to innovation and technological development in the sector.</li>
+                  <li class="font-[Saira] font-normal text-white flex items-center text-[16px]  mb-2">• We are grateful
+                    for the trust of everyone who has accompanied us on this long journey. Together, we build the future
+                    of the used auto parts sector!</li>
+                </ul>
+                <img class="w-full max-w-[110px] mt-4" src="images/logo.png">
+                <span class=" font-[Saira] font-normal text-white flex items-center text-[16px] mt-3">
+                  Best Regards,
+                </span>
+                <span class=" font-[Saira] font-normal text-white flex items-center text-[16px] mt-3  mb-5">
+                  Telepecas.com Team
+                </span>
+              </div>
+            </div>
+             <!-- submit part request  -->
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a3">
+              <div class="w-full mx-auto mt-5 bg-black rounded-lg">
+                <div class="flex flex-wrap">
+                  <div class="text-white w-full">
+                    <!-- Tabs -->
+                    <ul id="tabs" class="flex flex-wrap justify-around px-2 w-full text-white space-y-2 md:space-y-0 md:flex-nowrap my-3 lg:my-0">
+                      <li class="px-3 text-white py-3 w-full md:w-auto text-center">
+                        <a id="default-tab" href="#first" class="flex flex-col items-center font-[Saira]">
+                          <p class="text-sm md:text-base">Vehicle</p>
+                        </a>
+                      </li>
+                      <li class="px-3 text-white py-3 w-full md:w-auto text-center bg-[#7EAF00]">
+                        <a href="#second" class="flex flex-col items-center">
+                          <p class="text-sm md:text-base  font-[Saira]">Parts</p>
+                        </a>
+                      </li>
+                      <li class="px-3 text-white py-3 w-full md:w-auto text-center">
+                        <a href="#third" class="flex flex-col items-center">
+                          <p class="text-sm md:text-base  font-[Saira]">Contact Information</p>
+                        </a>
+                      </li>
+                      <li class="px-3 text-white py-3 w-full md:w-auto text-center">
+                        <a href="#fourth" class="flex flex-col items-center">
+                          <p class="text-sm md:text-base  font-[Saira]">Confirm Request</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
+                <!-- Tab Contents -->
+                <div id="tab-contents" class="">
+                  <div id="first" class="w-full  bg-[#020202D9] rounded-lg mt-5 hidden h-[1000px]">
+                    <div class="text-white p-15 flex gap-10">
+                      <div class="flex flex-col  w-full">
+                        <div x-data="select" class="relative" @click.outside="open = false">
+                          <button @click="toggle" :class="(open) &amp;&amp; 'ring-blue-600'"
+                            class="flex w-full border-2 text-white outline-none px-4 h-10 border-none py-3 bg-[#f2f2f24d]">
+                            <span x-text="(language == '') ? '1 Month' : language" class="text-white text-[16px]">1 Month</span>
+                            <i
+                              class="fa fa-caret-down absolute right-4 bg-[white] text-black  rounded-full w-[20px] h-[19px] text-[10px]"></i>
+                          </button>
+                          <ul class="z-2 absolute mt-1 w-full rounded bg-[#f2f2f2] text-black" x-show="open"
+                            style="display: none;">
+                            <li class="cursor-pointer select-none p-2 hover:bg-gray-200"
+                              @click="setLanguage('Python')">Python
+                            </li>
+                            <li class="cursor-pointer select-none p-2 hover:bg-gray-200"
+                              @click="setLanguage('PHP')">PHP</li>
+                            <li class="cursor-pointer select-none p-2 hover:bg-gray-200" @click="setLanguage('C#')">
+                              C#</li>
+                          </ul>
+                        </div>
+                      </div>
+
+
+                      <div class="flex flex-col  w-full">
+                        <div x-data="select" class="relative" @click.outside="open = false">
+                          <button @click="toggle" :class="(open) &amp;&amp; 'ring-blue-600'"
+                            class="flex w-full border-2 text-white outline-none px-4 h-10 border-none py-3 bg-[#f2f2f24d]">
+                            <span x-text="(language == '') ? '1 Month' : language" class="text-white text-[16px]">1 Month</span>
+                            <i
+                              class="fa fa-caret-down absolute right-4 bg-[white] text-black  rounded-full w-[20px] h-[19px] text-[10px]"></i>
+                          </button>
+                          <ul class="z-2 absolute mt-1 w-full rounded bg-[#f2f2f2] text-black" x-show="open"
+                            style="display: none;">
+                            <li class="cursor-pointer select-none p-2 hover:bg-gray-200"
+                              @click="setLanguage('Python')">Python
+                            </li>
+                            <li class="cursor-pointer select-none p-2 hover:bg-gray-200"
+                              @click="setLanguage('PHP')">PHP</li>
+                            <li class="cursor-pointer select-none p-2 hover:bg-gray-200" @click="setLanguage('C#')">
+                              C#</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="second" class="p-4 text-center text-white hidden">Second tab content</div>
+                  <div id="third" class="p-4 text-center text-white hidden">Third tab content</div>
+                  <div id="fourth" class="p-4 text-center text-white ">Fourth tab content</div>
+                  <div id="fifth" class="hidden p-4 text-center text-white">
+                  </div>
+                </div>
+              </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a4">
+              Manage Stock
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a5">
+              Online StoreNew
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a6">
+              Technical Data
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a7">
+              Statistics News
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a8">
+              My Shopping
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a9">
+              My Reservations
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a10">
+              Favourite List
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a11">
+              Shipping Settings
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a12">
+              Cmotor TecDocFree
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a13">
+              My Persona Data
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a14">
+              Checking Account
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a15">
+              Website Management
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a16">
+              Protocols
+            </div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a17">
+              Log Out
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Slider logo -->
+  <div
+    class="bg-black text-md flex gap-4 items-center w-full justify-center container mx-auto mt-5 p-10 mb-10 relative rounded-lg">
+    <div class="swiper-container swiper-container-horizontal">
+      <h2 class="text-white text-[22px] font-[500]">Magazine 2024</h2>
+      <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+
+      <!-- Swiper Wrapper -->
+      <div class="swiper-wrapper font-[Saira] text-white pt-10 relative ml-[10%]"
+        style="transform: translate3d(-1466px, 0px, 0px); transition-duration: 0ms;">
+        <div class="swiper-slide flex flex-wrap swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="2"
+          style="width: 1456px; margin-right: 10px;">
+          <div class="text-center flex-wrap flex">
+            <img src="images/img1.png">
+            <img src="images/img2.png">
+            <img src="images/img3.png">
+            <img src="images/img4.png">
+            <img src="images/img5.png">
+            <img src="images/img6.png">
+            <img src="images/img7.png">
+            <img src="images/img8.png">
+          </div>
+          <div class="text-center flex-wrap flex pt-4 pb-4">
+            <img src="images/img9.png">
+            <img src="images/img10.png">
+            <img src="images/img11.png">
+            <img src="images/img12.png">
+            <img src="images/img13.png">
+            <img src="images/img14.png">
+            <img src="images/img15.png">
+            <img src="images/img16.png">
+          </div>
+          <div class="text-center flex-wrap flex">
+            <img src="images/img17.png">
+            <img src="images/img18.png">
+            <img src="images/img19.png">
+            <img src="images/img20.png">
+            <img src="images/img21.png">
+            <img src="images/img22.png">
+            <img src="images/img23.png">
+            <img src="images/img24.png">
+          </div>
+        </div>
+        <div class="swiper-slide flex flex-wrap swiper-slide-active" data-swiper-slide-index="0"
+          style="width: 1456px; margin-right: 10px;">
+          <div class="text-center flex-wrap flex">
+            <img src="images/img1.png">
+            <img src="images/img2.png">
+            <img src="images/img3.png">
+            <img src="images/img4.png">
+            <img src="images/img5.png">
+            <img src="images/img6.png">
+            <img src="images/img7.png">
+            <img src="images/img8.png">
+          </div>
+          <div class="text-center flex-wrap flex pt-4 pb-4">
+            <img src="images/img9.png">
+            <img src="images/img10.png">
+            <img src="images/img11.png">
+            <img src="images/img12.png">
+            <img src="images/img13.png">
+            <img src="images/img14.png">
+            <img src="images/img15.png">
+            <img src="images/img16.png">
+          </div>
+          <div class="text-center flex-wrap flex">
+            <img src="images/img17.png">
+            <img src="images/img18.png">
+            <img src="images/img19.png">
+            <img src="images/img20.png">
+            <img src="images/img21.png">
+            <img src="images/img22.png">
+            <img src="images/img23.png">
+            <img src="images/img24.png">
+          </div>
+        </div>
+        <div class="swiper-slide flex flex-wrap swiper-slide-next" data-swiper-slide-index="1"
+          style="width: 1456px; margin-right: 10px;">
+          <div class="text-center flex-wrap flex">
+            <img src="images/img1.png">
+            <img src="images/img2.png">
+            <img src="images/img3.png">
+            <img src="images/img4.png">
+            <img src="images/img5.png">
+            <img src="images/img6.png">
+            <img src="images/img7.png">
+            <img src="images/img8.png">
+          </div>
+          <div class="text-center flex-wrap flex pt-4 pb-4">
+            <img src="images/img9.png">
+            <img src="images/img10.png">
+            <img src="images/img11.png">
+            <img src="images/img12.png">
+            <img src="images/img13.png">
+            <img src="images/img14.png">
+            <img src="images/img15.png">
+            <img src="images/img16.png">
+          </div>
+          <div class="text-center flex-wrap flex">
+            <img src="images/img17.png">
+            <img src="images/img18.png">
+            <img src="images/img19.png">
+            <img src="images/img20.png">
+            <img src="images/img21.png">
+            <img src="images/img22.png">
+            <img src="images/img23.png">
+            <img src="images/img24.png">
+          </div>
+        </div>
+        <div class="swiper-slide flex flex-wrap swiper-slide-duplicate-prev" data-swiper-slide-index="2"
+          style="width: 1456px; margin-right: 10px;">
+          <div class="text-center flex-wrap flex">
+            <img src="images/img1.png">
+            <img src="images/img2.png">
+            <img src="images/img3.png">
+            <img src="images/img4.png">
+            <img src="images/img5.png">
+            <img src="images/img6.png">
+            <img src="images/img7.png">
+            <img src="images/img8.png">
+          </div>
+          <div class="text-center flex-wrap flex pt-4 pb-4">
+            <img src="images/img9.png">
+            <img src="images/img10.png">
+            <img src="images/img11.png">
+            <img src="images/img12.png">
+            <img src="images/img13.png">
+            <img src="images/img14.png">
+            <img src="images/img15.png">
+            <img src="images/img16.png">
+          </div>
+          <div class="text-center flex-wrap flex">
+            <img src="images/img17.png">
+            <img src="images/img18.png">
+            <img src="images/img19.png">
+            <img src="images/img20.png">
+            <img src="images/img21.png">
+            <img src="images/img22.png">
+            <img src="images/img23.png">
+            <img src="images/img24.png">
+          </div>
+        </div>
+        <div class="swiper-slide flex flex-wrap swiper-slide-duplicate swiper-slide-duplicate-active"
+          data-swiper-slide-index="0" style="width: 1456px; margin-right: 10px;">
+          <div class="text-center flex-wrap flex">
+            <img src="images/img1.png">
+            <img src="images/img2.png">
+            <img src="images/img3.png">
+            <img src="images/img4.png">
+            <img src="images/img5.png">
+            <img src="images/img6.png">
+            <img src="images/img7.png">
+            <img src="images/img8.png">
+          </div>
+          <div class="text-center flex-wrap flex pt-4 pb-4">
+            <img src="images/img9.png">
+            <img src="images/img10.png">
+            <img src="images/img11.png">
+            <img src="images/img12.png">
+            <img src="images/img13.png">
+            <img src="images/img14.png">
+            <img src="images/img15.png">
+            <img src="images/img16.png">
+          </div>
+          <div class="text-center flex-wrap flex">
+            <img src="images/img17.png">
+            <img src="images/img18.png">
+            <img src="images/img19.png">
+            <img src="images/img20.png">
+            <img src="images/img21.png">
+            <img src="images/img22.png">
+            <img src="images/img23.png">
+            <img src="images/img24.png">
+          </div>
+        </div>
+      </div>
+
+      <!--slider Navigation Buttons -->
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+    <div class="absolute top-[50%] text-[14px] left-[10px] right-auto swiper-left bg-[#7EAF00] rounded-full py-2 px-3"
+      tabindex="0" role="button" aria-label="Previous slide">
+      <i class="fa fa-chevron-left text-black"></i>
+    </div>
+    <div class="absolute top-[50%] text-[14px] right-[10px] swiper-right bg-[#7EAF00] rounded-full py-2 px-3"
+      tabindex="0" role="button" aria-label="Next slide">
+      <i class="fa fa-chevron-right text-black"></i>
+    </div>
+  </div>
+
+  <!-- feedback section   -->
+  <div class="bg-black bg-center bg-cover bg-no-repeat container mx-auto mt-5 p-6 md:p-10 mb-10 rounded-lg"
+    style="background-image: url('images/dashboard.png');">
+
+    <h2 class="text-white text-[20px] md:text-[22px] font-[500] text-start md:text-start">Your Voice Matters: Share Your
+      Thoughts!</h2>
+    <div class="border border-[#7EAF00] mt-2 lg:w-[33%] md:w-[70%] w-[90%]"></div>
+
+    <p class="pt-6 md:pt-10 text-[18px] md:text-[20px] font-[400] text-white text-start">
+      Help Us Improve: Share Your Honest Feedback and Shape a Better Experience!
+    </p>
+
+    <div class="flex flex-col md:flex-row items-center md:items-start">
+      <div class="mt-5 w-full md:w-10/12 relative">
+        <textarea id="message" rows="6"
+          class="block p-3 w-full md:w-[60%] text-md text-gray-900 bg-[#f2f2f230] dark:bg-[#f2f2f230] dark:placeholder-gray-400 dark:text-white"
+          placeholder="Share Your Experience About Telepecas"></textarea>
+        <button
+          class="absolute top-[60%] font-[Saira] text-[18px] right-[8%] lg:right-[42%] md:right-[42%] px-4 py-2 text-[16px] md:text-[18px] bg-white hover:bg-[#7EAF00] duration-300">
+          Send Feedback
+        </button>
+      </div>
+
+      <div class="w-1/3 md:w-1/5 mt-10 md:mt-20">
+        <img src="images/logo.png" class="w-full h-auto">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- storenew section -->
+  <div class="container flex lg:flex-nowrap md:flex-wrap flex-wrap mx-auto mt-5 mb-10">
+    <div
+      class="rounded-lg w-full lg:w-6/12 bg-[url(images/back-img.png)] bg-no-repeat bg-right bg-[#000] mx-auto p-5 lg:p-10">
+      <p class="text-white font-semibold text-center lg:text-left">
+        Find parts for your car.
+        <span class="text-[#7EAF00] font-semibold font-[Poppins]">2,547,853</span>
+        used auto parts ads available for purchase from over
+        <span class="text-[#7EAF00] font-semibold font-[Poppins]">250</span>
+        parts sellers.
+      </p>
+      <div class="relative pr-3 w-full sm:w-[204px] mb-3 mt-10 mx-auto lg:mx-0">
+        <h2 class="text-white absolute top-[-10px] left-2 bg-black px-1">Choose Brand</h2>
+        <select class="bg-black form-select text-[#ffffff87] py-2 px-3 pt-5 border border-[#ffffff87] w-full">
+          <option selected="">Search Here</option>
+          <option value="1">Search Here</option>
+          <option value="2">Search Here</option>
+          <option value="3">Search Here</option>
+        </select>
+      </div>
+    </div>
+    <div class="w-full lg:w-6/12 bg-black text-white p-5 rounded-lg mt-5 lg:mt-0 lg:ml-5">
+      <h2 class="text-white text-[22px] font-[500] text-center lg:text-left">
+        Statistics of unlocking contacts online store
+      </h2>
+      <div class="border border-[#7EAF00] mt-2 w-full"></div>
+      <div class="flex flex-wrap justify-around mt-10 text-center">
+        <p class="w-1/3 lg:w-auto">Advertisement</p>
+        <p class="w-1/3 lg:w-auto">Client</p>
+        <p class="w-1/3 lg:w-auto">Date</p>
+      </div>
+      <div class="bg-[#7EAF00] mt-10 font-[Saira] p-2">
+        <p class="text-white text-center text-[13px]">
+          You still don't have contact unlocks in your ads. If you have no published ads,
+          <a href="#" class="underline text-black">import through the API</a>
+          <span> or</span>
+          <a href="#" class="underline text-black"> create new ads.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- moreinfo section  -->
+  <div class="container mx-auto mt-5 mb-10 text-white p-7 font-[Saira] bg-black rounded-lg">
+    <p class="text-[16px]">Telepeças provides the SMS and e-mail service to inform clients in real-time about the status
+      of budgets, procurement awards, dispatch information, password recovery, internal advertising campaigns, payment
+      notices, account expiration notice and all kind of useful reminders.</p>
+    <p class="pt-3 text-[16px] text-[#7EAF00]"><a href="#">To set up and accept notifications already, click here.</a>
+    </p>
+    <p class="pt-3 text-[16px] text-[#7EAF00]"><a href="#">If you don't want to receive notifications click here.</a>
+    </p>
+  </div>
+
+<!-- footermain -->
+  <footer class="bg-black mt-15">
+    <div class="container flex px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24 justify-around flex-wrap font-[Saira]">
+      <div class="lg:w-6/12 w-full grid grid-cols-1 gap-8 ">
+        <div>
+          <div class="flex justify-start text-teal-300 sm:justify-start">
+            <img src="images/footerlogo.png" />
+          </div>
+          <h2 class="text-white text-[20px] mt-6 w-[50%]">Subscribe to our Newsletter </h2>
+          <p class="max-w-md mx-auto mt-6 leading-relaxed text-center text-white sm:max-w-xs sm:mx-0 sm:text-left">
+            Get access to information, news and trends from the mechanical and automotive sector.
+          </p>
+          <div class="w-[70%] mt-3">
+            <form action="#" class="mb-2">
+              <div class="relative flex items-center overflow-hidden">
+                <input class="w-full px-3 py-2 text-base  ease-in-out bg-[#f2f2f24a] appearance-none text-[#FFFFFF]"
+                  type="email" placeholder="Enter your email">
+                <button
+                  class="px-3 py-1 text-xs text-sm font-medium text-center text-black no-underline bg-[#FFFFFF] absolute right-1"
+                  type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="mt-6">
+            <img src="images/footerlogo2.png" />
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-6/12 w-full flex justify-between flex-wrap">
+        <div class="lg:w-8/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Contact</p>
+            <nav class="mt-8">
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    TelePecas, Lda
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Rua do Bairro, nº38 - 4715-163 Braga
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Linha de peças: 760 501 234 (custo de chamada 0.60 EUR +IVA)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    iT Support: 253 600 550 (national fixed network call cost)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Customer Support: geral@telepecas.com
+                  </a>
+                </li>
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+        <div class="lg:w-4/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Partners</p>
+
+            <ul class="mt-8 space-y-4">
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="images/image 16.png" />
+
+                </a>
+              </li>
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="images/Group 460.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white py-2 px-2 mx-auto">
+      <div
+        class="text-center flex justify-center mx-auto container  md:justify-center lg:justify-between flex-wrap lg:flex-nowrap items-center">
+        <img class="" src="images/footerlogo3.png" />
+        <p class="text-start text-[14px] lg:mt-0 md:mt-0 mt-3 text-[#020202b5] font-[Saira]">The data presented on this
+          website regarding the cataloging of products, as well as any other element of the products announced, its
+          technical information can not be copied, duplicated or divulged without the prior consent of TelePeças and
+          TecDoc. <a class="text-[#020202]">Any violation detected by our installed tools for detecting such acts
+            constitutes a copyright infringement.</a></p>
+
+      </div>
+    </div>
+    <div class="bg-black py-2 px-2 mx-auto font-[Saira]">
+      <div
+        class="text-center flex justify-center mx-auto container flex-wrap lg:justify-between md:justify-center items-center">
+        <p class="text-start text-[14px] text-white">© telepecas.com, 2007 - 2024, all rights reserved. Developed and
+          owned by TelePeças Lda (registered trademark).</p>
+        Tabs
+        <div class="footer-social-icon">
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-facebook facebook-bg font-bold  h-10 w-10 text-center  bg-[#FFFFFF] p-2 rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-twitter twitter-bg h-10 font-bold p-2 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-instagram  instagram-bg  p-2 font-bold h-10 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-youtube-play youtube-bg p-2 font-bold   h-10 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+ <!-- script starts -->
+  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.min.js'></script
+  <script>
+    function dropdownHandler(element) {
+      let single = element.getElementsByTagName("ul")[0];
+      single.classList.toggle("hidden");
+    }
+
+    function MenuHandler(el, val) {
+      let MainList = el.parentElement.parentElement.getElementsByTagName("ul")[0];
+      let closeIcon = el.parentElement.parentElement.getElementsByClassName("close-m-menu")[0];
+      let showIcon = el.parentElement.parentElement.getElementsByClassName("show-m-menu")[0];
+      if (val) {
+        MainList.classList.remove("hidden");
+        el.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        showIcon.classList.remove("hidden");
+        MainList.classList.add("hidden");
+        el.classList.add("hidden");
+      }
+    }
+    // ------------------------------------------------------
+    let sideBar = document.getElementById("mobile-nav");
+    let menu = document.getElementById("menu");
+    let cross = document.getElementById("cross");
+    const sidebarHandler = (check) => {
+      if (check) {
+        sideBar.style.transform = "translateX(0px)";
+        menu.classList.add("hidden");
+        cross.classList.remove("hidden");
+      } else {
+        sideBar.style.transform = "translateX(-100%)";
+        menu.classList.remove("hidden");
+        cross.classList.add("hidden");
+      }
+    };
+    let list = document.getElementById("list");
+    let chevrondown = document.getElementById("chevrondown");
+    let chevronup = document.getElementById("chevronup");
+    const listHandler = (check) => {
+      if (check) {
+        list.classList.remove("hidden");
+        chevrondown.classList.remove("hidden");
+        chevronup.classList.add("hidden");
+      } else {
+        list.classList.add("hidden");
+        chevrondown.classList.add("hidden");
+        chevronup.classList.remove("hidden");
+      }
+    };
+  </script>
+  <!-- slider -->
+  <!--JAVASCRIPT CODE-->
+  <script>
+    var swiper = new Swiper(".centered-slide-carousel", {
+      centeredSlides: true,
+      paginationClickable: true,
+      loop: true,
+      spaceBetween: 20,
+      slideToClickedSlide: true,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".centered-slide-carousel .swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1920: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        },
+        1028: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        },
+        990: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        }
+      }
+    });
+  </script>
+
+  <script>
+    var swiper = new Swiper(".centered-slide-carousel2", {
+      centeredSlides: true,
+      paginationClickable: true,
+      loop: true,
+      spaceBetween: 20,
+      slideToClickedSlide: true,
+      pagination: {
+        el: ".centered-slide-carousel2 .swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1920: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+
+      }
+    });
+  </script>
+  <script>
+    var swiper = new Swiper(".centered-slide-carousel3", {
+      centeredSlides: true,
+      paginationClickable: true,
+      loop: true,
+      spaceBetween: 30,
+      slideToClickedSlide: true,
+      clickable: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: -20,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+      },
+      breakpoints: {
+        1920: {
+          slidesPerView: 3,
+          spaceBetween: 70
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        },
+
+      }
+    });
+  </script>
+  <script>
+    var swiper = new Swiper(".centered-slide-carousel4", {
+      centeredSlides: true,
+      paginationClickable: true,
+      loop: true,
+      spaceBetween: 30,
+      slideToClickedSlide: true,
+      clickable: true,
+      breakpoints: {
+        1920: {
+          slidesPerView: 9,
+          spaceBetween: 10
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 0
+        },
+
+      }
+    });
+  </script>
+  <!-- map-sidbar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js"></script>
+  <script>
+    const setup = () => {
+      return {
+        isSidebarOpen: false,
+      }
+    }
+  </script>
+  <!-- dropdown -->
+  <script>
+    document.addEventListener("alpine:init", () => {
+      Alpine.data("select", () => ({
+        open: false,
+        language: "",
+
+        toggle() {
+          this.open = !this.open;
+        },
+
+        setLanguage(val) {
+          this.language = val;
+          this.open = false;
+        },
+      }));
+    });
+  </script>
+  <!-- model -->
+  <script>
+    function toggleModal() {
+      document.getElementById('modal').classList.toggle('hidden')
+    }
+  </script>
+  <script>
+    document.querySelectorAll('.tab').forEach(i => {
+      i.addEventListener('click', (e) => {
+        document.querySelectorAll('.tab').forEach(e => {
+          e.classList.remove("active")
+        })
+
+
+
+        i.classList.add('active')
+
+        document.querySelectorAll('.tabContent').forEach(e => {
+          e.classList.add("hidden")
+        })
+        const target = i.dataset.tabId
+
+        document.getElementById(target).classList.remove("hidden");
+      })
+    })
+  </script>
+  <!-- Horizontal tabbing -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let tabsContainer = document.querySelector("#tabs");
+      let tabTogglers = tabsContainer.querySelectorAll("a");
+
+      tabTogglers.forEach(function (toggler) {
+        toggler.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          let tabName = this.getAttribute("href");
+          let tabContents = document.querySelector("#tab-contents");
+
+          // Remove background color and button from all tabs
+          tabTogglers.forEach(tab => {
+            tab.parentElement.classList.remove("bg-[#7EAF00]");
+            let existingButton = tab.parentElement.querySelector("button");
+            if (existingButton) existingButton.remove();
+          });
+
+          // Hide all tab content
+          Array.from(tabContents.children).forEach(content => {
+            content.classList.add("hidden");
+          });
+
+          // Show the selected tab content
+          let activeTab = document.querySelector(tabName);
+          if (activeTab) {
+            activeTab.classList.remove("hidden");
+          }
+
+          // Apply background color and add a button to the selected tab
+          let selectedTab = this.closest("li");
+          selectedTab.classList.add("bg-[#7EAF00]");
+          selectedTab.appendChild(newButton);
+        });
+      });
+    });
+
+  </script>
+  <!-- Code block ends -->
+  <!-- partial -->
+</body>
+
+</html>

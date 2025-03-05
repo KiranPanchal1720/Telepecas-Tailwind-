@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telepicas</title>
+  <meta name="title" content="Tailwind CSS  Horizontal Navigation - Free &amp; Premium components">
+  <meta name="description" content="Tailwind Navigation components act as the primary navigation of a webapp.">
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- slider -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <style>
+    .fixed-icon {
+      width: 60px;
+    }
+
+    .hide-text {
+      display: none;
+    }
+
+    .tab.active {
+      background: #7EAF00;
+      padding: 3px 15px;
+    }
+
+    .down-arrow {
+      display: block;
+    }
+
+    .inner-option {
+      padding-left: 60px;
+    }
+
+    .fixed-icon .inner-option {
+      padding-left: 0px;
+    }
+
+    .custom-label input:checked+svg {
+      display: block !important;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .down-arrow {
+        display: none;
+      }
+
+      .fixed-icon i {
+        font-size: 16px !important;
+      }
+
+      .fixed-icon {
+        width: 45px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="h-full w-full">
+    <!-- Code block starts -->
+
+    <!-- This is an example component -->
+    <div class="w-full mx-auto">
+      <nav class="bg-white">
+        <div
+          class="w-full max-w-[1540px] lg:p-3 md:p-3 p-2  flex  mx-auto flex-wrap md:flex-nowrap lg:flex-nowrap items-center justify-between py-3 mb-3 lg:mb-0">
+
+          <a href="#" class="flex">
+            <img class="w-full lg:max-w-[200px] md:max-w-[100px] max-w-[100px]" src="images/logo.png" />
+          </a>
+          <button data-collapse-toggle="mobile-menu" type="button"
+            class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none rounded-lg inline-flex items-center justify-center"
+            aria-controls="mobile-menu-2" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:block md:block hidden lg:w-[600px] md:w-[200px] mx-3">
+            <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+              <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </span>
+              <input name="episodequery" id="title"
+                class="border-white outline-none border-0  lg:max-w-full w-full rounded-xl p-2" type="text"
+                placeholder="Search Product Here" style="background:#F2F2F2;">
+              <button type="submit" class="lg:p-3 md:p-2 p-3 text-white text-[100px] rounded-tr rounded-br"
+                style="background:#7EAF00;">
+                <p class="">Search</p>
+            </div>
+          </form>
+          <div
+            class="hidden md:block w-full md:w-auto md:relative lg:relative absolute lg:top-0 md:top-0  top-[56px] left-0 lg:p-0 p-5 bg-white"
+            id="mobile-menu">
+            <ul class="flex lg:justify-between md:justify-between justify-start  lg:mt-0 md:mt-0 mt-5 items-cente  ">
+              <li>
+                <a class="cursor-pointer">
+                  <div class="text-gray-800">
+                    <div class="flex items-center pr-2">
+                      <i class="text-lg fa fa-shopping-cart lg:p-3 p-2 border rounded-full border-black"
+                        aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a class="cursor-pointer">
+                  <div class="text-gray-800">
+                    <div class="flex items-center pr-2">
+                      <i class="text-lg fa fa-bookmark lg:p-3 p-2 lg:pl-4 lg:pr-4 pl-3 pr-3 border rounded-full border-black"
+                        aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </a>
+              </li>
+
+
+              <li class="text-gray-800 cursor-pointer">
+                <div class="flex items-center  pr-2">
+                  <img src="images/map.png" class="lg:max-w-[40px] max-w-[30px] lg:h-[40px] h-[30px]">
+                </div>
+              </li>
+              <li class="text-gray-800 cursor-pointer">
+                <div class="flex items-center  pr-2">
+                  <i class="text-lg fa fa-eur lg:p-3 p-2 lg:pl-4 lg:pr-4 pl-3 pr-3 border rounded-full border-black"
+                    aria-hidden="true"></i>
+                </div>
+              </li>
+            </ul>
+            <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:hidden md:hidden block  lg:mt-0 md:mt-0 mt-5 "
+              style="background:#F2F2F2;">
+              <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+                <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </span>
+                <input name="episodequery" id="title" class="border-white outline-none border-0 w-full rounded-xl p-2"
+                  type="text" placeholder="Search Product Here" style="background:#F2F2F2;">
+                <button type="submit" class=" p-3 text-white text-xl rounded-tr rounded-br bg-[#7EAF00]">
+                  <p class="font-semibold text-lg">Search</p>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div
+            class="flex lg:w-full md:max-w-[185px] lg:max-w-[250px] justify-between right-10 lg:right-auto md:right-auto absolute lg:relative md:relative lg:top-0 md:top-0 top-3 rounded-md ">
+            <div class=" lg:w-full md:max-w-[160px] lg:max-w-[200px]">
+              <div x-data="select" class="relative" @click.outside="open = false">
+                <button @click="toggle" :class="(open) &amp;&amp; 'ring-blue-600'"
+                  class="flex w-full border-2 text-white outline-none rounded-md border-none bg-[#000]  py-3 px-2">
+                  <span class="text-[#7EAF00] font-semibold font-[Poppins]"><i class="fa fa-user mr-2"
+                      aria-hidden="true"></i> Nick smith</span>
+                  <i
+                    class="fa fa-caret-down absolute right-4 bg-[#7EAF00] text-black rounded-full w-[20px] h-[19px] text-[10px] down-arrow"></i>
+                </button>
+                <ul class="z-2 absolute lg:mt-5 mt-1 w-full rounded bg-black text-white" x-show="open"
+                  style="display: none;">
+                  <li class="cursor-pointer select-none p-2 hover:bg-gray-800" @click="setLanguage('Python')">Python
+                  </li>
+                  <li class="cursor-pointer select-none p-2 hover:bg-gray-800" @click="setLanguage('PHP')">PHP</li>
+                  <li class="cursor-pointer select-none p-2 hover:bg-gray-800" @click="setLanguage('C#')">C#</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-black lg:p-3 p-1 rounded-lg flex ml-3">
+              <p class="text-[#7EAF00] font-semibold font-[Poppins] flex justify-center align-center items-center">5</p>
+              <i class="fa fa-star text-[#7EAF00] ml-3 items-center align-center" aria-hidden="true"
+                style="display: flex;"></i>
+            </div>
+
+          </div>
+          <!-- Dropdown menu -->
+          <div id="dropdownNavbar"
+            class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+            <ul class="py-1" aria-labelledby="dropdownLargeButton">
+              <li>
+                <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sell Parts</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Professional</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Private</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class=" bg-black p-5 mb-3">
+      <div class="w-full max-w-[1540px] mx-auto">
+        <div class="flex flex-wrap justify-between align-center justify-center">
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Inbox Requests</a></div>
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Request Parts</a></div>
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Find Parts</a></div>
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Auto-data (0 credits)</a></div>
+          <div class="w-full lg:w-2/12 text-center lg:mb-0 mb-3"><a href="##"
+              class="text-white font-[Saira] font-semibold">Advertising (0 ADS)</a></div>
+          <div class="w-full lg:w-2/12 text-center"><a href="##" class="text-white font-[Saira] font-semibold">Make An
+              Advertisement</a></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div x-data="{ sidebarOpen: window.innerWidth > 768 }" class="flex h-full">
+      <aside
+        class="pt-5 flex-shrink-0 w-70 flex flex-col border-r relative transition-all duration-300 bg-black rounded-r-lg after:z-0 after:border after:border-[#ffffff7a] after:absolute lg:after:left-[60px]  after:top-0 after:w-[1px] after:h-[100%] after:shadow"
+        :class="{ 'fixed-icon': !sidebarOpen }">
+
+        <div x-data="{ expanded: null }" x-cloak class=" ">
+          <!-- Main Toggle 1 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div class="flex align-center tab active px-3">
+              <i class="fa fa-home mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Inbox</div>
+            </div>
+          </div>
+
+          <!-- Main Accordion 1 -->
+          <div x-show="expanded == 1" x-collapse>
+            <div x-data="{ expanded: null }" class="inner-option">
+              <!-- Sub Toggle 1 -->
+              <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+                class="w-full cursor-pointer py-3 text-white inline-block">
+                <div data-tab-id="a1.1" class="flex align-center tab px-3">
+                  <i class="fa fa-columns mr-0 lg:mr-0 mt-1 text-center" aria-hidden="true"
+                    style="font-size: 20px;"></i>
+                  <div class="ml-2 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                    :class="{ 'hide-text': !sidebarOpen }">Part Request</div>
+                </div>
+              </div>
+
+              <!-- Sub Toggle 2 -->
+              <div @click="expanded !== 2 ? expanded = 2 : expanded = null"
+                class="w-full cursor-pointer py-3 text-white inline-block">
+                <div data-tab-id="a1.2" class="flex align-center tab px-3">
+                  <i class="fa fa-user mr-0 lg:mr-0 mt-1 text-center" aria-hidden="true" style="font-size: 20px;"></i>
+                  <div class="ml-2 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                    :class="{ 'hide-text': !sidebarOpen }">Protocols Request</div>
+                </div>
+              </div>
+              <!-- Sub Toggle 3 -->
+              <div @click="expanded !== 3 ? expanded = 3 : expanded = null"
+                class="w-full cursor-pointer py-3 text-white inline-block">
+                <div data-tab-id="a1.3" class="flex align-center tab px-3">
+                  <i class="fa fa-money mr-0 lg:mr-0 mt-1 text-center" aria-hidden="true" style="font-size: 20px;"></i>
+                  <div class="ml-2 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                    :class="{ 'hide-text': !sidebarOpen }">My Budgets</div>
+                </div>
+              </div>
+              <!-- Sub Toggle 3 -->
+              <div @click="expanded !== 4 ? expanded = 4 : expanded = null"
+                class="w-full cursor-pointer py-3 text-white inline-block">
+
+                <div data-tab-id="a1.4" class="flex align-center tab px-3">
+                  <i class="fa fa-archive mr-0 lg:mr-0 mt-1 text-center" aria-hidden="true"
+                    style="font-size: 20px;"></i>
+                  <div class="ml-2 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                    :class="{ 'hide-text': !sidebarOpen }">Request Archived </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Main Toggle 1 End -->
+
+          <!-- Main Toggle 2 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a2" class="flex align-center tab px-3">
+              <i class="fa fa-inbox mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Orders/Reservations</div>
+            </div>
+          </div>
+
+
+          <!-- Main Toggle 3 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a2" class="flex align-center tab px-3">
+              <i class="fa fa-inbox mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">My Request</div>
+            </div>
+          </div>
+
+          <!-- Main Toggle 4 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a2" class="flex align-center tab px-3">
+              <i class="fa fa-inbox mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Trash Box</div>
+            </div>
+          </div>
+
+          <!-- Main Toggle 5 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a2" class="flex align-center tab px-3">
+              <i class="fa fa-inbox mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Notes</div>
+            </div>
+          </div>
+
+          <!-- Main Toggle 6 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a2" class="flex align-center tab px-3">
+              <i class="fa fa-inbox mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Print Requests</div>
+            </div>
+          </div>
+          <!-- Main Toggle 7 -->
+          <div @click="expanded !== 1 ? expanded = 1 : expanded = null"
+            class="w-full cursor-pointer py-3 bg-black text-white inline-block relative">
+            <div data-tab-id="a2" class="flex align-center tab px-3">
+              <i class="fa fa-inbox mr-0 lg:mr-4 mt-1 text-center" aria-hidden="true" style="font-size: 25px;"></i>
+              <div class="ml-5 px-2 leading-loose hover:cursor-pointer font-[Saira]"
+                :class="{ 'hide-text': !sidebarOpen }">Setting</div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+      <div class="flex-1 lg:ml-5 ml-0 p-4 lg:p-0">
+        <button class="p-1 mt-2 bg-black pl-3 pr-3 pt-2 pb-2 rounded-lg ml-4" @click="sidebarOpen = !sidebarOpen">
+          <i class="fa fa-bars text-white" aria-hidden="true"></i>
+        </button>
+        <main class="">
+          <div class="flex-grow mt-3 text-sm">
+
+            <div class="tabContent hidden flex flex-col gap-y-4 " id="a1.1">
+              <div class="bg-black">
+                <div class="text-white flex flex-wrap p-5 items-center">
+                  <div class="w-full lg:w-8/12 flex items-center">
+                    <div class="bg-[#7EAF00] text-black px-3 py-2 rounded-lg">
+                      <a href="inbox-partrequest.html"> <i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="pl-5 text-lg font-medium">
+                      Public Order - NISSAN PRIMERA (P11) [June 1996 - DEC 2001]
+                    </p>
+                  </div>
+                  <div class="w-full lg:w-4/12 flex items-center justify-end mt-4 lg:mt-0">
+                    <img src="images/countrylogo.png" class="h-8 w-auto">
+                    <p class="pl-3 text-lg font-medium">PORTUGAL - LISBOA</p>
+                  </div>
+                </div>
+
+                <div class="border-1 border-[#7EAF00] w-full"></div>
+
+                <div class="flex flex-wrap text-white w-full">
+                  <!-- Left Column -->
+                  <div class="w-full md:w-6/12 p-5 pt-11">
+                    <a class="text-[#7EAF00] text-lg font-medium underline" href="#">No Stock Available</a>
+                    <div class="flex flex-col gap-3 mt-5 text-base">
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">ID Ticket - </span> 813006
+                      </div>
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Date - </span> Dec 31, 2024
+                      </div>
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Brand - </span> KIA
+                      </div>
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Model - </span> SPORTAGE IV (QL,QLE) [Jan, 2015 - Oct, 2022]
+                      </div>
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Version - </span> Not Available
+                      </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center mt-4">
+                      <div class="flex items-center mr-6">
+                        <input type="checkbox" class="h-6 w-6 border-white rounded bg-transparent">
+                        <h3 class="text-white pl-3 text-lg">To File</h3>
+                      </div>
+                      <div class="flex items-center">
+                        <input type="checkbox" class="h-6 w-6 border-white rounded bg-transparent">
+                        <h3 class="text-white pl-3 text-lg">Put Unread</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Right Column -->
+                  <div class="w-full md:w-6/12 p-5">
+                    <div class="flex flex-wrap items-center justify-around">
+                      <p class="text-lg font-medium">Vehicle Registration - </p>
+                      <div class="flex w-full max-w-[400px] rounded-lg">
+                        <div class="relative flex w-full h-[50px]">
+                          <div class="w-[50px] bg-[#2EA1FF] rounded-l-lg flex items-center justify-center">
+                            <img class="w-[18px]" src="images/number-plate.jpg">
+                          </div>
+                          <input class="text-center bg-[#F2F2F24D] text-white w-full text-[22px]" type="text"
+                            placeholder="94-10-XM">
+                          <div class="w-[50px] bg-[#2EA1FF] rounded-r-lg"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-3 mt-5 text-base">
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Year - </span> 2021
+                      </div>
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Nr.Doors - </span> Not Available
+                      </div>
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Cylinder - </span> 1.9 TDI 4motion 105 cv
+                      </div>
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Fuel - </span> Diesel
+                      </div>
+                      <div class="bg-[#F2F2F24D] px-3 py-2 rounded-sm">
+                        <span class="font-bold">Chassis No. - </span> Not Available
+                      </div>
+                    </div>
+
+                    <div class="flex justify-end mt-4">
+                      <button class="bg-white text-black px-5 py-2 hover:bg-gray-300">Next Unread</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- section1 -->
+
+              <div class="text-white flex flex-col gap-y-4 bg-black mt-3 font-[Saira]">
+                <div class="flex flex-wrap p-10">
+                  <div class="lg:w-5/12 w-full">
+                    <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
+                      <input type="file" class="hidden" x-ref="photo" x-on:change="
+                      photoName = $refs.photo.files[0].name;
+                      const reader = new FileReader();
+                      reader.onload = (e) => {
+                          photoPreview = e.target.result;
+                      };
+                      reader.readAsDataURL($refs.photo.files[0]);">
+
+                      <label class="block text-white text-[20px] font-bold mb-5 text-start" for="photo">
+                        Image<span class="text-red-600"> </span>
+                      </label>
+
+                      <div class="text-center bg-white w-full lg:max-w-[60%] rounded-sm pb-3">
+                        <div class="mt-2" x-show="! photoPreview">
+                          <div class="text-[60px] text-black p-5">
+                            <i class="fa fa-cloud-upload pt-10 text-[#797979]" aria-hidden="true"></i>
+                          </div>
+                        </div>
+                        <div class="mt-2" x-show="photoPreview" style="display: none;">
+                          <span class="block w-90 h-40 m-auto shadow"
+                            x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'"
+                            style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('null');">
+                          </span>
+                        </div>
+                        <button type="button" style="font-size: 16px;"
+                          class="font-semibold px-4 pt-2 py-2 text-[#817F7F] font-[Saira] hover:text-gray-500 focus:outline-none  active:text-gray-800 active:bg-gray-50 transition "
+                          x-on:click.prevent="$refs.photo.click()">
+                          Drag &amp; Drop here
+                          or <a class="text-[#007FCF]">upload a file</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="lg:w-7/12 w-full mt-10">
+                    <div class="flex flex-col gap-3 mt-5 items-center w-full lg:max-w-[80%] md:w-full ">
+                      <div class="bg-[#F2F2F24D] text-white px-3 py-2 w-full rounded-sm">
+                        <span>Designation Part - </span> &nbsp; &nbsp; &nbsp;<span>6 Speed Gear </span>
+                      </div>
+                      <div class="bg-[#F2F2F24D] text-white px-3 py-2 w-full rounded-sm">
+                        <span>References - </span> &nbsp; &nbsp; &nbsp;<span>0A4301107D</span>
+                      </div>
+                      <div class="bg-[#F2F2F24D] text-white px-3 py-2 w-full rounded-sm">
+                        <span>Comments - </span> &nbsp; &nbsp; &nbsp;<span>CLED HEADLIGHT</span>
+                      </div>
+                    </div>
+                    <div class="flex flex-row gap-3 mt-5 items-center w-full lg:max-w-[80%] md:w-full  justify-between">
+               
+
+                      <div class="bg-[#ffffff] text-black rounded-sm  px-3 py-2 cursor-pointer">
+                        <i class="fa fa-print pr-2" aria-hidden="true"></i>Print Ticket
+                      </div>
+
+                      <div class="bg-[#ffffff] text-black rounded-sm  px-3 py-2 cursor-pointer">
+                        <i class="fa fa-print pr-2" aria-hidden="true"></i>Print Ticket
+                      </div>
+                       
+
+                        <div class="bg-[#ffffff] text-black rounded-sm  px-3 py-2 cursor-pointer" id="openModal">
+                          <i class="fa fa-print pr-2" aria-hidden="true"></i>Print(with note)
+                        </div>
+                   
+                    </div>
+                    
+                    <div class="flex items-center justify-center mx-auto">
+                      <!-- Hidden Checkbox to Control Modal -->
+                      <input type="checkbox" id="modal-toggle" class="hidden peer" />
+                      <!-- Modal (Centered with Background Blur) -->
+                      <div class="fixed inset-0 bg-[#000000b8]  hidden peer-checked:flex items-center justify-center">
+                        <label for="modal-toggle" class="absolute inset-0"></label> <!-- Click outside to close -->
+                        <div class="bg-black p-4 rounded-lg font-[Poppins] shadow-lg w-full max-w-[700px] rounded-lg border-white border-1 relative">
+                          <div class="flex justify-between">
+                            <h2 class="text-[22px] font-semibold text-white text-center pl-[35%]">Place Print Ticket</h2>
+                            <label for="modal-toggle"
+                                class="bg-red-500 text-white px-2 py-1 rounded-full cursor-pointer"><i class="fa fa-times" aria-hidden="true"></i></label>
+                          </div>
+                          <div class="border-b-1 border-[#7EAF00] pt-2 w-full"></div>
+                          <p class="mt-2 text-white text-center text-[16px] font-[400]">Record The Observation To Be Printed</p>
+
+                          <div class="mt-3">
+                            <textarea class="w-full mt-3 text-slate-600 bg-[#F2F2F233] text-white rounded-lg appearance-none px-3.5 py-2.5" name="message" id="message" rows="3" oninput="this.parentNode.dataset.clonedVal = this.value" placeholder="Write A Note" required=""></textarea>
+                          </div>
+                          <div class="mt-4 mb-5 text-right">
+                            <label class="bg-white text-black px-4 py-1 text-[16px] font-[500] font-[Saira]">Put Ticket To Print</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="bg-[#7EAF00] p-2 flex flex-wrap lg:justify-around md:justify-between justify-between">
+                  <div class="bg-[#ffffff75] px-3 py-2 text-black flex justify-center items-center rounded-sm">
+                    <a href="##" class="block flex justify-center items-center ">
+                    <i class="fa fa-phone text-black h-5 w-5 bg-[#25D366] p-1 rounded-full align-center items-center"
+                      aria-hidden="true"></i>
+                    <p class="pl-3 text-black font-[500] text-[16px]">Buyer Contact</p>
+                    </a>
+                  </div>
+                  <div class="bg-[#ffffff75] px-3 py-2 text-black flex justify-center items-center rounded-sm">
+                    <a href="##" class="block flex justify-center items-center ">
+                    <i class="fa fa-whatsapp text-black  " aria-hidden="true"
+                      style="font-size: 22px;color: #25D366;"></i>
+                    <p class="pl-3 text-black font-[500] text-[16px]">Whatsapp</p>
+                    </a>
+                  </div>
+                  <div class="bg-[#ffffff75] px-3 py-2 text-black rounded-sm"> 
+                    <a href="print-reply.html" class="block flex justify-center items-center ">
+                    <i class="fa fa-commenting-o text-black " style="font-size: 22px;" aria-hidden="true"></i>
+                    <p class="pl-3 text-black font-[500] text-[16px]">Reply</p>
+                  </a>
+                </div>
+                  <div class="bg-[#ffffff75] px-3 py-2 text-black flex justify-center items-center rounded-sm">
+                    <a href="##" class="block flex justify-center items-center ">
+                    <i class="fa fa-trash text-black " style="font-size: 22px;" aria-hidden="true"></i>
+                    <p class="pl-3 text-black font-[500] text-[16px]">To Elimate</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabContent hidden flex flex-col gap-y-4 " id="a1.2">22222</div>
+            <div class="tabContent hidden flex flex-col gap-y-4 " id="a1.3">33333</div>
+            <div class="tabContent hidden flex flex-col gap-y-4 " id="a1.4">33333</div>
+            <div class="tabContent hidden flex-col gap-y-4 font-[Saira]" id="a2">dlfgd;g;hkflghlglh </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- footermain -->
+  <footer class="bg-black mt-15">
+    <div class="container flex px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24 justify-around flex-wrap font-[Saira]">
+      <div class="lg:w-6/12 w-full grid grid-cols-1 gap-8 ">
+        <div>
+          <div class="flex justify-start text-teal-300 sm:justify-start">
+            <img src="images/footerlogo.png" />
+          </div>
+          <h2 class="text-white text-[20px] mt-6 w-[50%]">Subscribe to our Newsletter </h2>
+          <p class="max-w-md mx-auto mt-6 leading-relaxed text-center text-white sm:max-w-xs sm:mx-0 sm:text-left">
+            Get access to information, news and trends from the mechanical and automotive sector.
+          </p>
+          <div class="w-[70%] mt-3">
+            <form action="#" class="mb-2">
+              <div class="relative flex items-center overflow-hidden">
+                <input class="w-full px-3 py-2 text-base  ease-in-out bg-[#f2f2f24a] appearance-none text-[#FFFFFF]"
+                  type="email" placeholder="Enter your email">
+                <button
+                  class="px-3 py-1 text-xs text-sm font-medium text-center text-black no-underline bg-[#FFFFFF] absolute right-1"
+                  type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="mt-6">
+            <img src="images/footerlogo2.png" />
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-6/12 w-full flex justify-between flex-wrap">
+        <div class="lg:w-8/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Contact</p>
+            <nav class="mt-8">
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    TelePecas, Lda
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Rua do Bairro, nº38 - 4715-163 Braga
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Linha de peças: 760 501 234 (custo de chamada 0.60 EUR +IVA)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    iT Support: 253 600 550 (national fixed network call cost)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Customer Support: geral@telepecas.com
+                  </a>
+                </li>
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+        <div class="lg:w-4/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Partners</p>
+
+            <ul class="mt-8 space-y-4">
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="images/image 16.png" />
+
+                </a>
+              </li>
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="images/Group 460.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white py-2 px-2 mx-auto">
+      <div
+        class="text-center flex justify-center mx-auto container  md:justify-center lg:justify-between flex-wrap lg:flex-nowrap items-center">
+        <img class="" src="images/footerlogo3.png" />
+        <p class="text-start text-[14px] lg:mt-0 md:mt-0 mt-3 text-[#020202b5] font-[Saira]">The data presented on this
+          website regarding the cataloging of products, as well as any other element of the products announced, its
+          technical information can not be copied, duplicated or divulged without the prior consent of TelePeças and
+          TecDoc. <a class="text-[#020202]">Any violation detected by our installed tools for detecting such acts
+            constitutes a copyright infringement.</a></p>
+
+      </div>
+    </div>
+    <div class="bg-black py-2 px-2 mx-auto font-[Saira]">
+      <div
+        class="text-center flex justify-center mx-auto container flex-wrap lg:justify-between md:justify-center items-center">
+        <p class="text-start text-[14px] text-white">© telepecas.com, 2007 - 2024, all rights reserved. Developed and
+          owned by TelePeças Lda (registered trademark).</p>
+        <div class="footer-social-icon">
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-facebook facebook-bg font-bold  h-10 w-10 text-center  bg-[#FFFFFF] p-2 rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-twitter twitter-bg h-10 font-bold p-2 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-instagram  instagram-bg  p-2 font-bold h-10 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-youtube-play youtube-bg p-2 font-bold   h-10 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+  <!-- printmodal -->
+  <script>
+    document.getElementById('openModal').addEventListener('click', function () {
+      document.getElementById('modal-toggle').checked = true;
+    });
+  </script>
+
+  <script>
+    function dropdownHandler(element) {
+      let single = element.getElementsByTagName("ul")[0];
+      single.classList.toggle("hidden");
+    }
+
+    function MenuHandler(el, val) {
+      let MainList = el.parentElement.parentElement.getElementsByTagName("ul")[0];
+      let closeIcon = el.parentElement.parentElement.getElementsByClassName("close-m-menu")[0];
+      let showIcon = el.parentElement.parentElement.getElementsByClassName("show-m-menu")[0];
+      if (val) {
+        MainList.classList.remove("hidden");
+        el.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        showIcon.classList.remove("hidden");
+        MainList.classList.add("hidden");
+        el.classList.add("hidden");
+      }
+    }
+    // ------------------------------------------------------
+    let sideBar = document.getElementById("mobile-nav");
+    let menu = document.getElementById("menu");
+    let cross = document.getElementById("cross");
+    const sidebarHandler = (check) => {
+      if (check) {
+        sideBar.style.transform = "translateX(0px)";
+        menu.classList.add("hidden");
+        cross.classList.remove("hidden");
+      } else {
+        sideBar.style.transform = "translateX(-100%)";
+        menu.classList.remove("hidden");
+        cross.classList.add("hidden");
+      }
+    };
+    let list = document.getElementById("list");
+    let chevrondown = document.getElementById("chevrondown");
+    let chevronup = document.getElementById("chevronup");
+    const listHandler = (check) => {
+      if (check) {
+        list.classList.remove("hidden");
+        chevrondown.classList.remove("hidden");
+        chevronup.classList.add("hidden");
+      } else {
+        list.classList.add("hidden");
+        chevrondown.classList.add("hidden");
+        chevronup.classList.remove("hidden");
+      }
+    };
+  </script>
+  <!-- slider -->
+
+
+
+  <!-- map-sidbar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js"></script>
+  <script>
+    const setup = () => {
+      return {
+        isSidebarOpen: false,
+      }
+    }
+  </script>
+
+  <!-- dropdown -->
+  <script>
+    document.addEventListener("alpine:init", () => {
+      Alpine.data("select", () => ({
+        open: false,
+        language: "",
+
+        toggle() {
+          this.open = !this.open;
+        },
+
+        setLanguage(val) {
+          this.language = val;
+          this.open = false;
+        },
+      }));
+    });
+  </script>
+
+
+
+  <!-- model -->
+  <script>
+    function toggleModal() {
+      document.getElementById('modal').classList.toggle('hidden')
+    }
+  </script>
+
+  <script>
+    document.querySelectorAll('.tab').forEach(i => {
+      i.addEventListener('click', (e) => {
+        document.querySelectorAll('.tab').forEach(e => {
+          e.classList.remove("active")
+        })
+
+
+
+        i.classList.add('active')
+
+        document.querySelectorAll('.tabContent').forEach(e => {
+          e.classList.add("hidden")
+        })
+        const target = i.dataset.tabId
+
+        document.getElementById(target).classList.remove("hidden");
+      })
+    })
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let tabsContainer = document.querySelector("#tabs");
+      let tabTogglers = tabsContainer.querySelectorAll("a");
+
+      tabTogglers.forEach(function (toggler) {
+        toggler.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          let tabName = this.getAttribute("href");
+          let tabContents = document.querySelector("#tab-contents");
+
+          // Remove background color and button from all tabs
+          tabTogglers.forEach(tab => {
+            tab.parentElement.classList.remove("bg-[#7EAF00]");
+            let existingButton = tab.parentElement.querySelector("button");
+            if (existingButton) existingButton.remove();
+          });
+
+          // Hide all tab content
+          Array.from(tabContents.children).forEach(content => {
+            content.classList.add("hidden");
+          });
+
+          // Show the selected tab content
+          let activeTab = document.querySelector(tabName);
+          if (activeTab) {
+            activeTab.classList.remove("hidden");
+          }
+
+          // Apply background color and add a button to the selected tab
+          let selectedTab = this.closest("li");
+          selectedTab.classList.add("bg-[#7EAF00]");
+
+
+          selectedTab.appendChild(newButton);
+        });
+      });
+    });
+
+  </script>
+
+
+  <!-- Code block ends -->
+  </div>
+  <!-- partial -->
+</body>
+
+</html>
