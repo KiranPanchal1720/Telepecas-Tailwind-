@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telepicas</title>
+  <link rel="canonical" href="https://tailwinduikit.com/components/webapp/navigation/horizontal_navigation">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.css'>
+  <!-- slider -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- navigation -->
+  <div class="w-full mx-auto">
+    <nav class="bg-white">
+      <div
+        class="w-full max-w-[1540px] lg:p-3 md:p-3 p-2  flex  mx-auto flex-wrap md:flex-nowrap lg:flex-nowrap items-center justify-between py-3">
+
+        <a href="#" class="flex">
+          <img class="w-full lg:max-w-[200px] md:max-w-[200px] max-w-[130px]" src="images/logo.png" />
+        </a>
+        <button data-collapse-toggle="mobile-menu" type="button"
+          class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none inline-flex items-center justify-center"
+          aria-controls="mobile-menu-2" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:block md:block hidden bg-[#F2F2F2] ">
+          <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+            <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </span>
+            <input name="episodequery" id="title"
+              class="border-white outline-none border-0  lg:max-w-[300px]  md:max-w-[100px] w-full rounded-xl p-2"
+              type="text" placeholder="Search Product Here" style="background:#F2F2F2;">
+            <button type="submit" class="lg:p-3 md:p-2 p-3 text-white text-[100px] rounded-tr rounded-br"
+              style="background:#7EAF00;">
+              <p class="">Search</p>
+          </div>
+        </form>
+        <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+          <ul class="flex lg:justify-between md:justify-between justify-start  lg:mt-0 md:mt-0 mt-5 items-cente  ">
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center pr-2">
+                    <i class="text-lg fa fa-shopping-cart p-3 border rounded-full border-black" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center  pr-2">
+                    <i class="text-lg fa fa-heart p-3 border rounded-full border-black" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center pr-2">
+                    <i class="text-lg fa fa-bookmark p-3 pl-4 pr-4 border rounded-full border-black"
+                      aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <i class="text-lg fa fa-user p-3 pl-4 pr-4 border rounded-full border-black" aria-hidden="true"></i>
+              </div>
+            </li>
+
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <img src="images/map.png" class="" style="max-width: 40px;height: 40px;">
+              </div>
+            </li>
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <i class="text-lg fa fa-eur p-3 pl-4 pr-4 border rounded-full border-black" aria-hidden="true"></i>
+              </div>
+            </li>
+          </ul>
+          <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:hidden md:hidden block  lg:mt-0 md:mt-0 mt-5 "
+            style="background:#F2F2F2;">
+            <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+              <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </span>
+              <input name="episodequery" id="title" class="border-white outline-none border-0 w-full rounded-xl p-2"
+                type="text" placeholder="Search Product Here" style="background:#F2F2F2;">
+              <button type="submit" class=" p-3 text-white text-xl rounded-tr rounded-br" style="background:#7EAF00;">
+                <p class="font-semibold text-lg">Search</p>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div
+          class="right-10 lg:right-auto md:right-auto absolute lg:relative md:relative bg-[#F2F2F2] lg:top-0 md:top-0 top-3  py-3 px-2"
+          style="
+            width: 100%;
+            max-width: 150px;
+        ">
+          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+            class="text-gray-700 hover:bg-gray-50 md:hover:bg-transparent  md:hover:text-blue-700 font-medium flex items-center  w-full pl-5">Registration
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg></button>
+        </div>
+        <!-- Dropdown menu -->
+        <div id="dropdownNavbar"
+          class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+          <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sell Parts</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Professional</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Private</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="w-full mx-auto bg-black lg:p-15 md:p-10 p-10 font-[Saira]">
+    <div class="flex justify-start pl-2">
+      <button class="text-white bg-[#7EAF00]  font-medium text-sm px-4 py-2.5 text-center inline-flex items-center rounded-sm"
+        type="button" data-dropdown-toggle="dropdown">Seller Plans
+        <i class="fa fa-caret-down w-5 h-5 ml-2 bg-white text-gray-400 rounded-full"></i>
+      </button>
+      <!-- Dropdown menu -->
+      <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
+        <div class="px-4 py-3">
+          <ul class="py-1" aria-labelledby="dropdown">
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Dashboard</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Settings</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <!-- TESTIMONIALS -->
+      <div class="mt-20 mx-auto h-full w-full p-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
+          <div
+            class="transform h-full bg-black w-full hover:bg-black border border-[#7EAF00] transition duration-500 hover:scale-110 lg:p-3 md:p-1 p-1">
+            <h3 class="text-[25px] font-[500] text-white mt-5 mb-3">UNLIMITED</h3>
+            <div class="lg:px-5 md:px-3 px-2   text-white">
+              <div class="bg-[#F2F2F24D] px-3 text-white font-semibold py-3 w-full text-center relative">
+                <a href="#first" class="flex flex-col items-center">
+                  <div class="flex items-center gap-5 text-[30px]"> 
+                    <i class="fa fa-eur" aria-hidden="true"></i>
+                    <span class="text-[40px] font-bold font-[Poppins]">150.00</span>
+                  </div>
+                  <p class="text-[20px] font-bold pb-6 pt-5">Per Month</p>
+                  <button type="submit"
+                    class="bg-black text-white px-6 py-2 border border-white mt-4 absolute bottom-[-15px]">Join
+                    Now</button>
+                </a>
+              </div>
+              <div class="text-center text-white pt-10">
+                <p class="text-[15px]">Be the first to close the deal. Sell without limits, without barriers.</p>
+              </div>
+              <div class="pt-10 pb-5">
+                <h2 class="text-[16px] font-[500] text-start">Tools for purchasing parts</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Included</h5>
+                </div>
+
+                <h2 class="text-[16px] font-[500] text-start pt-5">Part requests</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">No commissions</h5>
+                </div>
+
+
+                <h2 class="text-[16px] font-[500] text-start pt-5"> Part requests of clients with professional
+                  registration</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Customer telephone
+                    contact
+                  </h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Reply by message
+                    (budget) on
+                    the website</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Reply to customer's
+                    whatsapp
+                  </h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Sales through the
+                    website
+                    (secure payment) - optional</h5>
+                </div>
+
+                <h2 class="text-[16px] font-[500] text-start pt-5"> Features</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-black text-[12px] bg-[#EA2228] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Statistics and data analysis
+                  </h5>
+                </div>
+
+
+                <h2 class="text-[16px] font-[500] text-start pt-5">Online Store (5% Commission)</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Shopping cart (sale
+                    24h/day,
+                    without your intervention)</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Placement of ads
+                    individually
+                    on the TelePeças portal.</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Synchronization of
+                    stock by
+                    Atena</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">tock
+                    synchronization
+                    through API TelePeças</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-black text-[12px] bg-[#EA2228] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Advertising in
+                    advertisements
+                    (logo, phone number, company file).</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="transform h-full bg-black w-full hover:bg-black border border-[#7EAF00] transition duration-500 hover:scale-110 lg:p-3 md:p-1 p-1">
+            <h3 class="text-[25px] font-[500] text-white mt-5 mb-3">UNLIMITED</h3>
+            <div class="lg:px-5 md:px-3 px-2 text-white">
+              <div class="bg-[#F2F2F24D] px-3 text-white font-semibold py-3 w-full text-center relative">
+                <a href="#first" class="flex flex-col items-center">
+                  <div class="flex items-center gap-5 text-[30px]">
+                    <i class="fa fa-eur" aria-hidden="true"></i>
+                    <span class="text-[40px] font-bold font-[Poppins]">300.00</span>
+                  </div>
+                  <p class="text-[20px] font-bold pb-6 pt-5">Per Month</p>
+                  <button type="submit"
+                    class="bg-black text-white px-6 py-2 border border-white mt-4  absolute bottom-[-15px]">Join
+                    Now</button>
+                </a>
+              </div>
+              <div class="text-center text-white pt-10">
+                <p class="text-[15px]">Be the first to close the deal. Sell without limits, without barriers.</p>
+              </div>
+
+              <div class="pt-10 pb-5">
+                <h2 class="text-[16px] font-[500] text-start">Tools for purchasing parts</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Included</h5>
+                </div>
+
+                <h2 class="text-[16px] font-[500] text-start pt-5">Part requests</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">No commissions</h5>
+                </div>
+
+
+                <h2 class="text-[16px] font-[500] text-start pt-5"> Part requests of clients with professional
+                  registration</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Customer telephone
+                    contact
+                  </h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Reply by message
+                    (budget) on
+                    the website</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Reply to customer's
+                    whatsapp
+                  </h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Sales through the
+                    website
+                    (secure payment) - optional</h5>
+                </div>
+
+                <h2 class="text-[16px] font-[500] text-start pt-5"> Features</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-black text-[12px] bg-[#EA2228] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Statistics and data
+                    analysis
+                  </h5>
+                </div>
+
+
+                <h2 class="text-[16px] font-[500] text-start pt-5">Online Store (5% Commission)</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Shopping cart (sale
+                    24h/day,
+                    without your intervention)</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Placement of ads
+                    individually
+                    on the TelePeças portal.</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Synchronization of
+                    stock by
+                    Atena</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">tock
+                    synchronization
+                    through API TelePeças</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                  class="lg:text-[14px] md:text-[14px] text-black text-[12px] bg-[#EA2228] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Advertising in
+                    advertisements
+                    (logo, phone number, company file).</h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div
+            class="transform h-full bg-black w-full hover:bg-black border border-[#7EAF00] transition duration-500 hover:scale-110 lg:p-3 md:p-1 p-1">
+            <h3 class="text-[25px] font-[500] text-white mt-5 mb-3">UNLIMITED</h3>
+            <div class="lg:px-5 md:px-3 px-2 text-white">
+              <div class="bg-[#F2F2F24D] px-3 text-white font-semibold py-3 w-full text-center relative">
+                <a href="#first" class="flex flex-col items-center">
+                  <div class="flex items-center gap-5 text-[30px]">
+                    <i class="fa fa-eur" aria-hidden="true"></i>
+                    <span class="text-[40px] font-bold font-[Poppins]">350.00</span>
+                  </div>
+                  <p class="text-[20px] font-bold pb-6 pt-5">Per Month</p>
+                  <button type="submit"
+                    class="bg-black text-white px-6 py-2 border border-white mt-4  absolute bottom-[-15px]">Join
+                    Now</button>
+                </a>
+              </div>
+              <div class="text-center text-white pt-10">
+                <p class="text-[15px]">Be the first to close the deal. Sell without limits, without barriers.</p>
+              </div>
+
+              <div class="pt-10 pb-5 text-start">
+                <h2 class="text-[16px] font-[500] text-start">Tools for purchasing parts</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Included</h5>
+                </div>
+
+                <h2 class="text-[16px] font-[500] text-start pt-5">Part requests</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">No commissions</h5>
+                </div>
+
+
+                <h2 class="text-[16px] font-[500] text-start pt-5"> Part requests of clients with professional
+                  registration</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Customer telephone
+                    contact
+                  </h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Reply by message
+                    (budget) on
+                    the website</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1  w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Reply to customer's
+                    whatsapp
+                  </h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Sales through the
+                    website
+                    (secure payment) - optional</h5>
+                </div>
+
+                <h2 class="text-[16px] font-[500] text-start pt-5"> Features</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-black text-[12px] bg-[#EA2228] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Statistics and data
+                    analysis
+                  </h5>
+                </div>
+
+
+                <h2 class="text-[16px] font-[500] text-start pt-5">Online Store (5% Commission)</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Shopping cart (sale
+                    24h/day,
+                    without your intervention)</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Placement of ads
+                    individually
+                    on the TelePeças portal.</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Synchronization of
+                    stock by
+                    Atena</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">tock
+                    synchronization
+                    through API TelePeças</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                  class="lg:text-[14px] md:text-[14px] text-black text-[12px] bg-[#EA2228] rounded-full py-1 px-1   w-[25px] h-[25px]">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                  <h5 class="font-[Saira] lg:text-[14px] md:text-[16px] text-[12px] pl-4 text-start">Advertising in
+                    advertisements
+                    (logo, phone number, company file).</h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <footer class="bg-black">
+    <div class="container flex px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24 justify-around flex-wrap font-[Saira]">
+      <div class="lg:w-6/12 w-full grid grid-cols-1 gap-8 ">
+        <div>
+          <div class="flex justify-start text-teal-300 sm:justify-start">
+            <img src="images/footerlogo.png" />
+          </div>
+          <h2 class="text-white text-[20px] mt-6 w-[50%]">Subscribe to our Newsletter </h2>
+          <p class="max-w-md mx-auto mt-6 leading-relaxed text-center text-white sm:max-w-xs sm:mx-0 sm:text-left">
+            Get access to information, news and trends from the mechanical and automotive sector.
+          </p>
+          <div class="w-[70%] mt-3">
+            <form action="#" class="mb-2">
+              <div class="relative flex items-center overflow-hidden">
+                <input class="w-full px-3 py-2 text-base  ease-in-out bg-[#f2f2f24a] appearance-none text-[#FFFFFF]"
+                  type="email" placeholder="Enter your email">
+                <button
+                  class="px-3 py-1 text-xs text-sm font-medium text-center text-black no-underline bg-[#FFFFFF] absolute right-1"
+                  type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="mt-6">
+            <img src="images/footerlogo2.png" />
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-6/12 w-full flex justify-between flex-wrap">
+        <div class="lg:w-8/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Contact</p>
+            <nav class="mt-8">
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    TelePecas, Lda
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Rua do Bairro, nº38 - 4715-163 Braga
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Linha de peças: 760 501 234 (custo de chamada 0.60 EUR +IVA)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    iT Support: 253 600 550 (national fixed network call cost)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Customer Support: geral@telepecas.com
+                  </a>
+                </li>
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+        <div class="lg:w-4/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Partners</p>
+
+            <ul class="mt-8 space-y-4">
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="images/image 16.png" />
+
+                </a>
+              </li>
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="images/Group 460.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white py-1 px-1  mx-auto">
+      <div
+        class="text-center flex justify-center mx-auto container  md:justify-center lg:justify-between flex-wrap lg:flex-nowrap items-center">
+        <img class="" src="images/footerlogo3.png" />
+        <p class="text-start text-[14px] lg:mt-0 md:mt-0 mt-3 text-[#020202b5] font-[Saira]">The data presented on this
+          website regarding the cataloging of products, as well as any other element of the products announced, its
+          technical information can not be copied, duplicated or divulged without the prior consent of TelePeças and
+          TecDoc. <a class="text-[#020202]">Any violation detected by our installed tools for detecting such acts
+            constitutes a copyright infringement.</a></p>
+
+      </div>
+    </div>
+    <div class="bg-black py-2 px-2 mx-auto font-[Saira]">
+      <div
+        class="text-center flex justify-center mx-auto container flex-wrap lg:justify-between md:justify-center items-center">
+        <p class="text-start text-[14px] text-white">© telepecas.com, 2007 - 2024, all rights reserved. Developed and
+          owned by TelePeças Lda (registered trademark).</p>
+
+        <div class="footer-social-icon">
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-facebook facebook-bg font-bold  h-10 w-10 text-center  bg-[#FFFFFF] p-2 rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-twitter twitter-bg h-10 font-bold p-2 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-instagram  instagram-bg  p-2 font-bold h-10 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-youtube-play youtube-bg p-2 font-bold   h-10 w-10 text-center  bg-[#FFFFFF] rounded-full"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.min.js'></script>
+
+  <script>
+    function dropdownHandler(element) {
+      let single = element.getElementsByTagName("ul")[0];
+      single.classList.toggle("hidden");
+    }
+
+    function MenuHandler(el, val) {
+      let MainList = el.parentElement.parentElement.getElementsByTagName("ul")[0];
+      let closeIcon = el.parentElement.parentElement.getElementsByClassName("close-m-menu")[0];
+      let showIcon = el.parentElement.parentElement.getElementsByClassName("show-m-menu")[0];
+      if (val) {
+        MainList.classList.remove("hidden");
+        el.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        showIcon.classList.remove("hidden");
+        MainList.classList.add("hidden");
+        el.classList.add("hidden");
+      }
+    }
+    // ------------------------------------------------------
+    let sideBar = document.getElementById("mobile-nav");
+    let menu = document.getElementById("menu");
+    let cross = document.getElementById("cross");
+    const sidebarHandler = (check) => {
+      if (check) {
+        sideBar.style.transform = "translateX(0px)";
+        menu.classList.add("hidden");
+        cross.classList.remove("hidden");
+      } else {
+        sideBar.style.transform = "translateX(-100%)";
+        menu.classList.remove("hidden");
+        cross.classList.add("hidden");
+      }
+    };
+    let list = document.getElementById("list");
+    let chevrondown = document.getElementById("chevrondown");
+    let chevronup = document.getElementById("chevronup");
+    const listHandler = (check) => {
+      if (check) {
+        list.classList.remove("hidden");
+        chevrondown.classList.remove("hidden");
+        chevronup.classList.add("hidden");
+      } else {
+        list.classList.add("hidden");
+        chevrondown.classList.add("hidden");
+        chevronup.classList.remove("hidden");
+      }
+    };
+  </script>
+  <!-- slider -->
+
+
+  <!-- navigation toggle -->
+  <script>
+    document.addEventListener("alpine:init", () => {
+      Alpine.data("select", () => ({
+        open: false,
+        language: "",
+
+        toggle() {
+          this.open = !this.open;
+        },
+
+        setLanguage(val) {
+          this.language = val;
+          this.open = false;
+        },
+      }));
+    });
+  </script>
+
+  <!--JAVASCRIPT CODE-->
+  <script>
+    var swiper = new Swiper(".centered-slide-carousel", {
+      centeredSlides: true,
+      paginationClickable: true,
+      loop: true,
+      spaceBetween: 20,
+      slideToClickedSlide: true,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".centered-slide-carousel .swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1920: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        },
+        1028: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        },
+        990: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        }
+      }
+    });
+  </script>
+
+  <script>
+    var swiper = new Swiper(".centered-slide-carousel3", {
+      centeredSlides: true,
+      paginationClickable: true,
+      loop: true,
+      spaceBetween: 30,
+      slideToClickedSlide: true,
+      clickable: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: -20,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+      },
+      breakpoints: {
+        1920: {
+          slidesPerView: 3,
+          spaceBetween: 70
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        },
+
+      }
+    });
+  </script>
+
+
+
+  <!-- dropdown -->
+  <script>
+    document.addEventListener("alpine:init", () => {
+      Alpine.data("select", () => ({
+        open: false,
+        language: "",
+
+        toggle() {
+          this.open = !this.open;
+        },
+
+        setLanguage(val) {
+          this.language = val;
+          this.open = false;
+        },
+      }));
+    });
+  </script>
+
+
+</body>
+
+</html>

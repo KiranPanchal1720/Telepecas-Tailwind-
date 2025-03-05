@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.css'>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="canonical" href="https://tailwinduikit.com/components/webapp/navigation/horizontal_navigation">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style>
+    .swiper-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 200ms linear;
+      transform: scale(1);
+      margin-right: 0 !important;
+    }
+
+    .swiper-slide-active {
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body class="font-[Poppins] bg-black">
+  <!-- This is an example component -->
+
+  <!-- navigation -->
+  <div class="w-full mx-auto">
+    <nav class="bg-white">
+      <div
+        class="w-full max-w-[1540px] lg:p-3 md:p-3 p-2  flex  mx-auto flex-wrap md:flex-nowrap lg:flex-nowrap items-center justify-between py-3">
+
+        <a href="#" class="flex">
+          <img class="w-full lg:max-w-[200px] md:max-w-[200px] max-w-[130px]" src="images/logo.png" />
+        </a>
+        <button data-collapse-toggle="mobile-menu" type="button"
+          class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none rounded-lg inline-flex items-center justify-center"
+          aria-controls="mobile-menu-2" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:block md:block hidden bg-[#F2F2F2] ">
+          <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+            <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </span>
+            <input name="episodequery" id="title"
+              class="border-white outline-none border-0  lg:max-w-[300px]  md:max-w-[100px] w-full rounded-xl p-2"
+              type="text" placeholder="Search Product Here" style="background:#F2F2F2;">
+            <button type="submit" class="lg:p-3 md:p-2 p-3 text-white text-[100px] rounded-tr rounded-br"
+              style="background:#7EAF00;">
+              <p class="">Search</p>
+          </div>
+        </form>
+        <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+          <ul class="flex lg:justify-between md:justify-between justify-start  lg:mt-0 md:mt-0 mt-5 items-cente  ">
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center pr-2">
+                    <i class="text-lg fa fa-shopping-cart p-3 border rounded-full border-black" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center  pr-2">
+                    <i class="text-lg fa fa-heart p-3 border rounded-full border-black" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center pr-2">
+                    <i class="text-lg fa fa-bookmark p-3 pl-4 pr-4 border rounded-full border-black"
+                      aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <i class="text-lg fa fa-user p-3 pl-4 pr-4 border rounded-full border-black" aria-hidden="true"></i>
+              </div>
+            </li>
+
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <img src="images/map.png" class="" style="max-width: 40px;height: 40px;">
+              </div>
+            </li>
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <i class="text-lg fa fa-eur p-3 pl-4 pr-4 border rounded-full border-black" aria-hidden="true"></i>
+              </div>
+            </li>
+          </ul>
+          <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:hidden md:hidden block  lg:mt-0 md:mt-0 mt-5 "
+            style="background:#F2F2F2;">
+            <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+              <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </span>
+              <input name="episodequery" id="title" class="border-white outline-none border-0 w-full rounded-xl p-2"
+                type="text" placeholder="Search Product Here" style="background:#F2F2F2;">
+              <button type="submit" class=" p-3 text-white text-xl rounded-tr rounded-br" style="background:#7EAF00;">
+                <p class="font-semibold text-lg">Search</p>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div
+          class="right-10 lg:right-auto md:right-auto absolute lg:relative md:relative bg-[#F2F2F2] lg:top-0 md:top-0 top-3  py-3 px-2"
+          style="
+          width: 100%;
+          max-width: 150px;
+      ">
+          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+            class="text-gray-700 hover:bg-gray-50 md:hover:bg-transparent  md:hover:text-blue-700 font-medium flex items-center  w-full pl-5">Registration
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg></button>
+        </div>
+        <!-- Dropdown menu -->
+        <div id="dropdownNavbar"
+          class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+          <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sell Parts</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Professional</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Private</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="w-full mx-auto mt-5 bg-black lg:p-15 md:p-10 p-10">
+    <div class="flex justify-start">
+      <button class="text-white bg-[#7EAF00]  font-medium text-sm px-4 py-2.5 text-center inline-flex items-center"
+        type="button" data-dropdown-toggle="dropdown">Buyer Plans
+        <i class="fa fa-caret-down w-5 h-5 ml-2 bg-white text-gray-400 rounded-full"></i>
+      </button>
+      <!-- Dropdown menu -->
+      <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
+        <div class="px-4 py-3">
+          <ul class="py-1" aria-labelledby="dropdown">
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Dashboard</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Settings</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-2 border-[#7EAF00] mt-3 w-full mx-auto">
+      <div class="w-full mx-auto text-white">
+        <!-- Tabs -->
+        <ul id="tabs"
+          class="flex flex-wrap justify-around px-2 w-full text-white space-y-2 md:space-y-0 md:flex-nowrap">
+          <li class="bg-[#7EAF00] px-10 text-white font-semibold py-8 w-full md:w-auto text-center">
+            <a id="default-tab" href="#first" class="flex flex-col items-center">
+              <div class="flex items-center gap-x-2">
+                <i class="fa fa-eur text-lg md:text-xl" aria-hidden="true"></i>
+                <span class="text-lg md:text-2xl font-bold">20.00</span>
+              </div>
+              <p class="text-sm md:text-base pb-6">Per Month</p>
+              <button type="submit" class="bg-black text-white px-6 py-2">Join Now</button>
+            </a>
+          </li>
+          <li class="px-10 text-white font-semibold py-8 w-full md:w-auto text-center">
+            <a href="#second" class="flex flex-col items-center">
+              <div class="flex items-center gap-x-2">
+                <i class="fa fa-eur text-lg md:text-xl" aria-hidden="true"></i>
+                <span class="text-lg md:text-2xl font-bold">70.00</span>
+              </div>
+              <p class="text-sm md:text-base pb-6">For 6 Months</p>
+            </a>
+          </li>
+          <li class="px-10 text-white font-semibold py-8 w-full md:w-auto text-center">
+            <a href="#third" class="flex flex-col items-center">
+              <div class="flex items-center gap-x-2">
+                <i class="fa fa-eur text-lg md:text-xl" aria-hidden="true"></i>
+                <span class="text-lg md:text-2xl font-bold">100.00</span>
+              </div>
+              <p class="text-sm md:text-base pb-6">Per Year</p> 
+            </a>
+          </li>
+          <li class="px-10 text-white font-semibold py-8 w-full md:w-auto text-center">
+            <a href="#fourth" class="flex flex-col items-center">
+              <div class="flex items-center gap-x-2">
+                <i class="fa fa-eur text-lg md:text-xl" aria-hidden="true"></i>
+                <span class="text-lg md:text-2xl font-bold">170.00</span>
+              </div>
+              <p class="text-sm md:text-base pb-6">For 2 Years</p>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Tab Contents -->
+        <div id="tab-contents" class="p-4">
+          <!-- <div id="first" class="p-4 text-center"> -->
+          <div id="first" class="lg:p-4 md:p-2 p-1">
+
+            <div class="lg:p-10 md:p-5 p-1">
+              <h2 class="text-[18px] font-[500]">Auto Parts Request</h2>
+              <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+              <div class="flex items-center mt-5">
+                <div
+                  class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                  <i class="fa fa-check text-black"></i>
+                </div>
+                <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">Unlimited parts orders from over
+                  250 registered
+                  parts dealers.</h5>
+              </div>
+              <div class="flex items-center mt-5">
+                <div
+                  class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                  <i class="fa fa-check text-black"></i>
+                </div>
+                <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">Negotiation with sellers by
+                  message.</h5>
+              </div>
+
+              <div class="flex items-center mt-5">
+                <div
+                  class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                  <i class="fa fa-check text-black"></i>
+                </div>
+                <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">Negotiation with sellers by
+                  phone. </h5>
+              </div>
+
+
+
+              <div class="pt-10">
+                <h2 class="text-[18px] font-[500]">Online Store</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px]  pl-4">Unlimited searches.</h5>
+                </div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">Parts ads with professional
+                    discounts.</h5>
+                </div>
+
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">Contacts of sellers who
+                    published the ads. </h5>
+                </div>
+
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">No Ads </h5>
+                </div>
+              </div>
+
+              <div class="pt-10">
+                <h2 class="text-[18px] font-[500]">Online Store</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">Unlimited searches.</h5>
+                </div>
+              </div>
+
+              <div class="pt-10">
+                <h2 class="text-[18px] font-[500]">Autodata</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">Access to the TeleParts
+                    Automotive tool - powered
+                    by AutoData (purchase of access 23h - from GBP1.64/credit).</h5>
+                </div>
+              </div>
+
+              <div class="pt-10">
+                <h2 class="text-[18px] font-[500]">CMotor TecDoc</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4">Unlimited Search Engine
+                    Compatibility.</h5>
+                </div>
+              </div>
+
+              <div class="pt-10">
+                <h2 class="text-[18px] font-[500]">TPGo</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px]  pl-4">Transport Services - quote
+                    requests from
+                    validated carriers.</h5>
+                </div>
+              </div>
+
+              <div class="pt-10">
+                <h2 class="text-[18px] font-[500]">Customer Support</h2>
+                <div class="border-1 border-[#7EAF00] mt-2 w-full pl-5"></div>
+                <div class="flex items-center mt-5">
+                  <div
+                    class="lg:text-[14px] md:text-[14px] text-[12px] bg-[#7EAF00] rounded-full  py-2 px-2 lg:w-[30px] md:w-[30px] w-[25px] lg:h-[30px] md:h-[30px] h-[25px]">
+                    <i class="fa fa-check text-black"></i>
+                  </div>
+                  <h5 class="font-[Saira] lg:text-[18px] md:text-[16px] text-[12px] pl-4"> An account manager who will
+                    accompany you in
+                    your doubts/difficulties using the platform</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+          <div id="second" class="hidden p-4 text-center">Second tab content</div>
+          <div id="third" class="hidden p-4 text-center">Third tab content</div>
+          <div id="fourth" class="hidden p-4 text-center">Fourth tab content</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- footermain -->
+  <footer class="bg-black">
+    <div class="container flex px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24 justify-around flex-wrap font-[Saira]">
+      <div class="lg:w-6/12 w-full grid grid-cols-1 gap-8 ">
+        <div>
+          <div class="flex justify-start text-teal-300 sm:justify-start">
+            <img src="./images/footerlogo.png" />
+          </div>
+          <h2 class="text-white text-[20px] mt-6 w-[50%]">Subscribe to our Newsletter </h2>
+          <p
+            class="max-w-md mx-auto mt-6 leading-relaxed text-center text-white text-left md:text-left sm:text-left sm:mx-0 ">
+            Get access to information, news and trends from the mechanical and automotive sector.
+          </p>
+          <div class="w-[100%] lg:w-[70%] md:w-[70%] mt-3">
+            <form action="#" class="mb-2">
+              <div class="relative flex items-center overflow-hidden">
+                <input class="w-full px-3 py-2 text-base  ease-in-out bg-[#f2f2f24a] appearance-none text-[#FFFFFF]"
+                  type="email" placeholder="Enter your email">
+                <button
+                  class="px-3 py-1 text-xs text-sm font-medium text-center text-black no-underline bg-[#FFFFFF] absolute right-1"
+                  type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="mt-6">
+            <img src="./images/footerlogo2.png" />
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-6/12 w-full flex justify-between flex-wrap">
+        <div class="lg:w-8/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Contact</p>
+            <nav class="mt-8">
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    TelePecas, Lda
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Rua do Bairro, nº38 - 4715-163 Braga
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Linha de peças: 760 501 234 (custo de chamada 0.60 EUR +IVA)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    iT Support: 253 600 550 (national fixed network call cost)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Customer Support: geral@telepecas.com
+                  </a>
+                </li>
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+        <div class="lg:w-4/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Partners</p>
+
+            <ul class="mt-8 space-y-4">
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="./images/image 16.png" />
+
+                </a>
+              </li>
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="./images/Group 460.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white py-2 px-2 mx-auto">
+      <div
+        class="text-center flex justify-center mx-auto container  md:justify-center lg:justify-between flex-wrap lg:flex-nowrap items-center">
+        <img class="" src="./images/footerlogo3.png" />
+        <p class="text-start text-[14px] lg:mt-0 md:mt-0 mt-3 text-[#020202b5] font-[Saira]">The data presented on this
+          website regarding the cataloging of products, as well as any other element of the products announced, its
+          technical information can not be copied, duplicated or divulged without the prior consent of TelePeças and
+          TecDoc. <a class="text-[#020202]">Any violation detected by our installed tools for detecting such acts
+            constitutes a copyright infringement.</a></p>
+
+      </div>
+    </div>
+    <div class="bg-black py-2 px-2 mx-auto font-[Saira]">
+      <div
+        class="text-center flex justify-center mx-auto container flex-wrap lg:justify-between md:justify-center items-center">
+        <p class="text-start text-[14px] text-white">© telepecas.com, 2007 - 2024, all rights reserved. Developed and
+          owned by TelePeças Lda (registered trademark).</p>
+
+        <div class="footer-social-icon">
+          <a class="text-black text-[20px] mr-10" href="#">
+            <i
+              class="fa fa-facebook facebook-bg font-bold  h-10 w-10 text-center border-2 bg-[#FFFFFF] p-2 rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-twitter twitter-bg h-10 font-bold p-2 w-10 text-center border-2 bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-instagram  instagram-bg  p-2 font-bold h-10 w-10 text-center border-2 bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-youtube-play youtube-bg p-2 font-bold   h-10 w-10 text-center border-2 bg-[#FFFFFF] rounded-full"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.min.js'></script>
+
+  <!-- pricetabledropdown -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let tabsContainer = document.querySelector("#tabs");
+      let tabTogglers = tabsContainer.querySelectorAll("a");
+
+      tabTogglers.forEach(function (toggler) {
+        toggler.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          let tabName = this.getAttribute("href");
+          let tabContents = document.querySelector("#tab-contents");
+
+          // Remove background color and button from all tabs
+          tabTogglers.forEach(tab => {
+            tab.parentElement.classList.remove("bg-[#7EAF00]");
+            let existingButton = tab.parentElement.querySelector("button");
+            if (existingButton) existingButton.remove();
+          });
+
+          // Hide all tab content
+          Array.from(tabContents.children).forEach(content => {
+            content.classList.add("hidden");
+          });
+
+          // Show the selected tab content
+          let activeTab = document.querySelector(tabName);
+          if (activeTab) {
+            activeTab.classList.remove("hidden");
+          }
+
+          // Apply background color and add a button to the selected tab
+          let selectedTab = this.closest("li");
+          selectedTab.classList.add("bg-[#7EAF00]");
+
+          // Create and append button if it doesn’t exist
+          let newButton = document.createElement("button");
+          newButton.textContent = "Join Now";
+          newButton.classList.add(
+            "mt-2", "bg-black", "text-white", "px-6", "py-2", "transition", "duration-300"
+          );
+
+          selectedTab.appendChild(newButton);
+        });
+      });
+    });
+
+  </script>
+
+
+
+  <script>
+    function dropdownHandler(element) {
+      let single = element.getElementsByTagName("ul")[0];
+      single.classList.toggle("hidden");
+    }
+
+    function MenuHandler(el, val) {
+      let MainList = el.parentElement.parentElement.getElementsByTagName("ul")[0];
+      let closeIcon = el.parentElement.parentElement.getElementsByClassName("close-m-menu")[0];
+      let showIcon = el.parentElement.parentElement.getElementsByClassName("show-m-menu")[0];
+      if (val) {
+        MainList.classList.remove("hidden");
+        el.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        showIcon.classList.remove("hidden");
+        MainList.classList.add("hidden");
+        el.classList.add("hidden");
+      }
+    }
+    let sideBar = document.getElementById("mobile-nav");
+    let menu = document.getElementById("menu");
+    let cross = document.getElementById("cross");
+    const sidebarHandler = (check) => {
+      if (check) {
+        sideBar.style.transform = "translateX(0px)";
+        menu.classList.add("hidden");
+        cross.classList.remove("hidden");
+      } else {
+        sideBar.style.transform = "translateX(-100%)";
+        menu.classList.remove("hidden");
+        cross.classList.add("hidden");
+      }
+    };
+    let list = document.getElementById("list");
+    let chevrondown = document.getElementById("chevrondown");
+    let chevronup = document.getElementById("chevronup");
+    const listHandler = (check) => {
+      if (check) {
+        list.classList.remove("hidden");
+        chevrondown.classList.remove("hidden");
+        chevronup.classList.add("hidden");
+      } else {
+        list.classList.add("hidden");
+        chevrondown.classList.add("hidden");
+        chevronup.classList.remove("hidden");
+      }
+    };
+  </script>
+  <!-- navigation toggle -->
+  <script>
+    document.addEventListener("alpine:init", () => {
+      Alpine.data("select", () => ({
+        open: false,
+        language: "",
+
+        toggle() {
+          this.open = !this.open;
+        },
+
+        setLanguage(val) {
+          this.language = val;
+          this.open = false;
+        },
+      }));
+    });
+  </script>
+</body>
+
+</html>

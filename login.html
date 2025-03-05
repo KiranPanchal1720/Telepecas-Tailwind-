@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.css'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="canonical" href="https://tailwinduikit.com/components/webapp/navigation/horizontal_navigation">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style>
+    .swiper-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 200ms linear;
+      transform: scale(0.8);
+    }
+
+    .swiper-slide__content {
+      height: 300px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #7EAF00;
+    }
+
+    .swiper-slide-active {
+      transform: scale(1);
+    }
+
+    .swiper-pagination-bullet {
+      background-color: white;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body class="font-[Poppins] bg-black">
+  <!-- This is an example component -->
+  <div class="w-full mx-auto">
+
+    <nav class="bg-white">
+      <div
+        class="w-full max-w-[1540px] p-10 flex  mx-auto flex-wrap md:flex-nowrap lg:flex-nowrap items-center justify-between py-3">
+        <a href="#" class="flex">
+          <img src="images/logo.png" />
+        </a>
+        <button data-collapse-toggle="mobile-menu" type="button"
+          class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none rounded-lg inline-flex items-center justify-center"
+          aria-controls="mobile-menu-2" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:block md:block hidden bg-[#F2F2F2] ">
+          <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+            <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </span>
+            <input name="episodequery" id="title"
+              class="border-white outline-none border-0  lg:max-w-[300px]  md:max-w-[100px] w-full rounded-xl p-2"
+              type="text" placeholder="Search Product Here" style="background:#F2F2F2;">
+            <button type="submit" class="lg:p-3 md:p-2 p-3 text-white text-[100px] rounded-tr rounded-br"
+              style="background:#7EAF00;">
+              <p class="">Search</p>
+          </div>
+        </form>
+        <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+          <ul class="flex lg:justify-between md:justify-between justify-start  lg:mt-0 md:mt-0 mt-5 items-cente  ">
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center pr-2">
+                    <i class="text-lg fa fa-shopping-cart p-3 border rounded-full border-black" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center  pr-2">
+                    <i class="text-lg fa fa-heart p-3 border rounded-full border-black" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="cursor-pointer">
+                <div class="text-gray-800">
+                  <div class="flex items-center pr-2">
+                    <i class="text-lg fa fa-bookmark p-3 pl-4 pr-4 border rounded-full border-black"
+                      aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <i class="text-lg fa fa-user p-3 pl-4 pr-4 border rounded-full border-black" aria-hidden="true"></i>
+              </div>
+            </li>
+
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <img src="images/map.png" class="" style="max-width: 40px;height: 40px;">
+              </div>
+            </li>
+            <li class="text-gray-800 cursor-pointer">
+              <div class="flex items-center  pr-2">
+                <i class="text-lg fa fa-eur p-3 pl-4 pr-4 border rounded-full border-black" aria-hidden="true"></i>
+              </div>
+            </li>
+          </ul>
+          <form class="bg-[#F2F2F2] rounded-tl rounded-bl lg:hidden md:hidden block  lg:mt-0 md:mt-0 mt-5 " style="background:#F2F2F2;">
+            <div class="bg-[#F2F2F2]  relative rounded-xl flex" style="background:#F2F2F2;">
+              <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </span>
+              <input name="episodequery" id="title" class="border-white outline-none border-0 w-full rounded-xl p-2"
+                type="text" placeholder="Search Product Here" style="background:#F2F2F2;">
+              <button type="submit" class=" p-3 text-white text-xl rounded-tr rounded-br" style="background:#7EAF00;">
+                <p class="font-semibold text-lg">Search</p>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="right-15 lg:right-auto md:right-auto absolute lg:relative md:relative bg-[#F2F2F2] lg:top-0 md:top-0 top-6  py-3 px-2 lg:mr-0 md:mr-0 mr-5"
+          style="
+          width: 100%;
+          max-width: 200px;
+      ">
+          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+            class="text-gray-700 hover:bg-gray-50 md:hover:bg-transparent  md:hover:text-blue-700 font-medium flex items-center  w-full pl-5">New
+            Registration
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg></button>
+        </div>
+        <!-- Dropdown menu -->
+        <div id="dropdownNavbar"
+          class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
+          <ul class="py-1" aria-labelledby="dropdownLargeButton">
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sell Parts</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Professional</a>
+            </li>
+            <li>
+              <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Buy Parts - Private</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div
+    class="bg-center bg-cover bg-no-repeat relative container mx-auto h-[800px]  w-full  flex flex-col lg:flex-row items-center justify-center md:justify-start justify-start"
+    style="background-image: url('images/bnerimg.png');">
+    <div class="w-full h-full bg-black opacity-40 absolute"></div>
+
+    <div class="relative text-white lg:w-2/5 text-center mx-auto mb-4 md:mt-10 mt-10 pl-10">
+      <div class="flex flex-col gap-4 text-[24px] font-[600] text-2xl font-semibold">
+        <h2 class="">Hello Again! Ready to Manage Your Sales?</h2>
+      </div>
+
+      <div class="mx-auto">
+        <div class="flex flex-col gap-2  w-full lg:mt-6 md:mt-2 mt-2">
+          <input class="border-2 text-white outline-none px-4 rounded-md border-none py-3 bg-[#f2f2f24d]" type="text"
+            placeholder="Email">
+        </div>
+
+        <div class="flex flex-col gap-2 w-full lg:mt-6 md:mt-3 mt-3">
+          <input class="border-2 text-white outline-none px-4  rounded-md border-none py-3 bg-[#f2f2f24d]"
+            type="password" placeholder="Password">
+        </div>
+
+        <div class="text-md flex gap-4 w-full justify-end lg:mt-3 text-[16px] justify-end md:mt-3 mt-2">
+          <a href="#" class="hover:underline">Forgot Password?</a>
+        </div>
+
+        <div class="lg:mt-10 md:mt-2 mt-2">
+          <button class="w-[50%] bg-red-600 p-3 rounded-md text-xl hover:bg-red-700">Login</button>
+        </div>
+      </div>
+
+      <div class="text-md flex gap-4 items-center justify-center lg:mt-10 md:mt-2 mt-2">
+        <p>or</p>
+      </div>
+      <div class="text-md flex gap-4 items-center  justify-around lg:mt-10 md:mt-2 justify-center space-x-4 mt-2">
+        <img src="images/Group 484.png" class="w-12 h-12">
+        <img src="images/Group 485.png" class="w-12 h-12">
+        <img src="images/Social Icons.png" class="w-12 h-12">
+
+      </div>
+
+      <div class="text-md flex gap-4  items-center  justify-center lg:mt-10 md:mt-2 :mt-2">
+        <p class="text-light mt-5 text-center">Don’t have an account ?<a class="text-red-700 underline decoration-solid"
+            href="#"> Sign UP</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="relative z-10 w-full lg:w-3/5 flex justify-center lg:mt-10 md:mt-2 mt-2">
+      <!-- Slider main container -->
+      <div
+        class="text-md flex gap-4 items-center w-full justify-center absolute lg:top-[50px] md:top-[10px] top-[10px]">
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper  font-[Saira] text-white">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="text-center">
+                <fieldset>
+                  <legend class="font-[Poppins] text-[24px]">TRUST</legend>
+                  <p class="text text-[16px] leading-[1.5]">We provide our partners and customers with a credible and
+                    controlled environment,
+                    promoting healthy relationships and meeting expectations. </p>
+                </fieldset>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <fieldset>
+                  <legend class="font-[Poppins] text-[24px]">TRUST</legend>
+                  <p class="text text-[16px] leading-[1.5]">We provide our partners and customers with a credible and
+                    controlled environment,
+                    promoting healthy relationships and meeting expectations. </p>
+                </fieldset>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <fieldset>
+                  <legend class="font-[Poppins] text-[24px]">TRUST</legend>
+                  <p class="text text-[16px] leading-[1.5]">We provide our partners and customers with a credible and
+                    controlled environment,
+                    promoting healthy relationships and meeting expectations. </p>
+                </fieldset>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <fieldset>
+                  <legend class="font-[Poppins] text-[24px]">TRUST</legend>
+                  <p class="text text-[16px] leading-[1.5]">We provide our partners and customers with a credible and
+                    controlled environment,
+                    promoting healthy relationships and meeting expectations. </p>
+                </fieldset>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <fieldset>
+                  <legend class="font-[Poppins] text-[24px]">TRUST</legend>
+                  <p class="text text-[16px] leading-[1.5]">We provide our partners and customers with a credible and
+                    controlled environment,
+                    promoting healthy relationships and meeting expectations. </p>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination mt-10 lg:mt-15 md:mt-10"></div>
+          <!-- If we need navigation buttons -->
+          <!-- <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> -->
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="bg-black">
+    <div class="container flex px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24 justify-around flex-wrap font-[Saira]">
+      <div class="lg:w-6/12 w-full grid grid-cols-1 gap-8 ">
+        <div>
+          <div class="flex justify-start text-teal-300 sm:justify-start">
+            <img src="./images/footerlogo.png" />
+          </div>
+          <h2 class="text-white text-[20px] mt-6 w-[50%]">Subscribe to our Newsletter </h2>
+          <p class="max-w-md mx-auto mt-6 leading-relaxed text-center text-white sm:max-w-xs sm:mx-0 sm:text-left">
+            Get access to information, news and trends from the mechanical and automotive sector.
+          </p>
+          <div class="w-[70%] mt-3">
+            <form action="#" class="mb-2">
+              <div class="relative flex items-center overflow-hidden">
+                <input class="w-full px-3 py-2 text-base  ease-in-out bg-[#f2f2f24a] appearance-none text-[#FFFFFF]"
+                  type="email" placeholder="Enter your email">
+                <button
+                  class="px-3 py-1 text-xs text-sm font-medium text-center text-black no-underline bg-[#FFFFFF] absolute right-1"
+                  type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="mt-6">
+            <img src="./images/footerlogo2.png" />
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-6/12 w-full flex justify-between flex-wrap">
+        <div class="lg:w-8/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Contact</p>
+            <nav class="mt-8">
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    TelePecas, Lda
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Rua do Bairro, nº38 - 4715-163 Braga
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Linha de peças: 760 501 234 (custo de chamada 0.60 EUR +IVA)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    iT Support: 253 600 550 (national fixed network call cost)
+                  </a>
+                </li>
+                <li>
+                  <a class="text-white transition hover:text-white/75" href="#">
+                    Customer Support: geral@telepecas.com
+                  </a>
+                </li>
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+        <div class="lg:w-4/12 w-full">
+          <div class="text-start sm:text-start">
+            <p class="text-lg font-medium text-white">Partners</p>
+
+            <ul class="mt-8 space-y-4">
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="./images/image 16.png" />
+
+                </a>
+              </li>
+              <li>
+                <a class="flex items-center justify-center sm:justify-start gap-1.5 group" href="#">
+                  <img src="./images/Group 460.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white py-2 px-2 mx-auto">
+      <div
+        class="text-center flex justify-center mx-auto container  md:justify-center lg:justify-between flex-wrap lg:flex-nowrap items-center">
+        <img class="" src="./images/footerlogo3.png" />
+        <p class="text-start text-[14px] lg:mt-0 md:mt-0 mt-3 text-[#020202b5] font-[Saira]">The data presented on this
+          website regarding the cataloging of products, as well as any other element of the products announced, its
+          technical information can not be copied, duplicated or divulged without the prior consent of TelePeças and
+          TecDoc. <a class="text-[#020202]">Any violation detected by our installed tools for detecting such acts
+            constitutes a copyright infringement.</a></p>
+
+      </div>
+    </div>
+    <div class="bg-black py-2 px-2 mx-auto font-[Saira]">
+      <div
+        class="text-center flex justify-center mx-auto container flex-wrap lg:justify-between md:justify-center items-center">
+        <p class="text-start text-[14px] text-white">© telepecas.com, 2007 - 2024, all rights reserved. Developed and
+          owned by TelePeças Lda (registered trademark).</p>
+
+        <div class="footer-social-icon">
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-facebook facebook-bg font-bold  h-10 w-10 text-center border-2 bg-[#FFFFFF] p-2 rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-twitter twitter-bg h-10 font-bold p-2 w-10 text-center border-2 bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-instagram  instagram-bg  p-2 font-bold h-10 w-10 text-center border-2 bg-[#FFFFFF] rounded-full"></i></a>
+          <a class="text-black text-[20px] mr-10" href="#"><i
+              class="fa fa-youtube-play youtube-bg p-2 font-bold   h-10 w-10 text-center border-2 bg-[#FFFFFF] rounded-full"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.min.js'></script>
+  <script>
+    var mySwiper = new Swiper(".swiper-container", {
+      spaceBetween: 10,
+      slidesPerView: 3,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 1, // Show only 1 slide on screens smaller than 767px
+          centeredSlides: false, // Adjust if needed
+        }
+      }
+
+    });
+    function dropdownHandler(element) {
+      let single = element.getElementsByTagName("ul")[0];
+      single.classList.toggle("hidden");
+    }
+
+    function MenuHandler(el, val) {
+      let MainList = el.parentElement.parentElement.getElementsByTagName("ul")[0];
+      let closeIcon = el.parentElement.parentElement.getElementsByClassName("close-m-menu")[0];
+      let showIcon = el.parentElement.parentElement.getElementsByClassName("show-m-menu")[0];
+      if (val) {
+        MainList.classList.remove("hidden");
+        el.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        showIcon.classList.remove("hidden");
+        MainList.classList.add("hidden");
+        el.classList.add("hidden");
+      }
+    }
+    // ------------------------------------------------------
+    let sideBar = document.getElementById("mobile-nav");
+    let menu = document.getElementById("menu");
+    let cross = document.getElementById("cross");
+    const sidebarHandler = (check) => {
+      if (check) {
+        sideBar.style.transform = "translateX(0px)";
+        menu.classList.add("hidden");
+        cross.classList.remove("hidden");
+      } else {
+        sideBar.style.transform = "translateX(-100%)";
+        menu.classList.remove("hidden");
+        cross.classList.add("hidden");
+      }
+    };
+    let list = document.getElementById("list");
+    let chevrondown = document.getElementById("chevrondown");
+    let chevronup = document.getElementById("chevronup");
+    const listHandler = (check) => {
+      if (check) {
+        list.classList.remove("hidden");
+        chevrondown.classList.remove("hidden");
+        chevronup.classList.add("hidden");
+      } else {
+        list.classList.add("hidden");
+        chevrondown.classList.add("hidden");
+        chevronup.classList.remove("hidden");
+      }
+    };
+  </script>
+
+
+</body>
+
+</html>
